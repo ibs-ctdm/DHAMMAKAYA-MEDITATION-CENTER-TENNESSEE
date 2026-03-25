@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>เจดีย์ | วัดพระธรรมกายเทนเนสซี</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#B0C4DE',
+            secondary: '#F0F8FF',
+            accent: '#7A8E6E',
+            dark: '#3D3228',
+          },
+          fontFamily: {
+            sarabun: ['Sarabun', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    body { font-family: 'Sarabun', sans-serif; }
+    .hero-overlay { background: linear-gradient(to bottom, rgba(61,50,40,0.4) 0%, rgba(61,50,40,0.72) 100%); }
+    .nav-link { transition: color 0.2s; }
+    .nav-link:hover { color: #7A8E6E; }
+    .gallery-item { transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; }
+    .gallery-item:hover { transform: scale(1.03); box-shadow: 0 16px 40px rgba(61,50,40,0.2); }
+    /* Lightbox */
+    #lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 1000; align-items: center; justify-content: center; }
+    #lightbox.active { display: flex; }
+    #lightbox img { max-width: 90vw; max-height: 85vh; object-fit: contain; border-radius: 8px; }
+    .fade-in { animation: fadeIn 0.8s ease forwards; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body class="bg-secondary text-dark">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/LOGO_2_3.png" alt="Logo" class="h-12 w-auto object-contain" onerror="this.style.display='none'" />
+        <div>
+          <div class="font-bold text-dark text-sm leading-tight">วัดพระธรรมกายเทนเนสซี</div>
+          <div class="text-xs text-accent font-medium tracking-wide">DHAMMAKAYA · TENNESSEE</div>
+        </div>
+      </a>
+      <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+        <a href="index.html" class="nav-link text-dark">หน้าแรก</a>
+        <a href="page.html" class="nav-link text-accent font-semibold">เจดีย์</a>
+        <a href="index.html#contact" class="nav-link text-dark">ติดต่อ</a>
+      </div>
+      <button id="mobileMenuBtn" class="md:hidden p-2 rounded text-dark hover:text-accent focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 py-3 space-y-2">
+      <a href="index.html" class="block py-2 text-sm font-medium text-dark">หน้าแรก</a>
+      <a href="page.html" class="block py-2 text-sm font-medium text-accent">เจดีย์</a>
+      <a href="index.html#contact" class="block py-2 text-sm font-medium text-dark">ติดต่อ</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative h-screen min-h-[550px] flex items-center justify-center overflow-hidden">
+    <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn39_2_12.jpg"
+         alt="พระเจดีย์" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="hero-overlay absolute inset-0"></div>
+    <div class="relative z-10 text-center px-6 max-w-3xl mx-auto fade-in">
+      <p class="text-primary/80 text-sm font-medium uppercase tracking-widest mb-4">World Peace Stupa · Tennessee</p>
+      <h1 class="text-white text-3xl md:text-5xl font-bold leading-relaxed mb-4 drop-shadow-lg">สถาปนาองค์พระเจดีย์</h1>
+      <p class="text-primary text-lg md:text-xl font-medium mb-8 drop-shadow">พระเจดีย์เพื่อสร้างสันติภาพโลก</p>
+      <a href="#gallery" class="inline-block bg-accent text-white px-8 py-3 rounded-full text-sm font-semibold tracking-wide hover:bg-opacity-90 transition shadow-lg">
+        ชมภาพเจดีย์
+      </a>
+    </div>
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- เจดีย์ Description -->
+  <section class="py-16 px-4 bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-accent text-sm font-semibold uppercase tracking-widest mb-2">Stupa · เจดีย์</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-dark mb-6">องค์แรกในสหรัฐอเมริกา</h2>
+      <div class="w-16 h-1 bg-accent mx-auto rounded-full mb-8"></div>
+      <p class="text-gray-700 leading-relaxed text-base md:text-lg mb-6">
+        ในปีนี้ (2569) จึงได้พร้อมใจกัน สถาปนาองค์พระเจดีย์ <strong>พระเจดีย์เพื่อสร้างสันติภาพโลก</strong>
+        นับเป็นองค์แรกในประเทศสหรัฐอเมริกา
+      </p>
+      <p class="text-gray-700 leading-relaxed text-base md:text-lg mb-6">
+        การสร้างองค์พระเจดีย์ในต่างประเทศ คือ การประดิษฐานพระพุทธศาสนา วิชชาธรรมกาย ให้มั่นคง
+        ให้ผู้คนได้เข้าถึงสันติสุขภายใน สร้างแสงสว่างในใจคน สืบต่ออายุพระพุทธศาสนาให้ยืนยาว
+        และถือเป็นอานิสงส์อันยิ่งใหญ่ ดั่งสร้างเสาแก่นกลางธรรมจักรให้หมุนไปไม่มีวันสิ้นสุด
+      </p>
+      <p class="text-gray-700 leading-relaxed text-base md:text-lg">
+        ...นับเป็นบุญใหญ่ของพวกเรา เพราะเมื่อใครได้มากราบไหว้สักการะ ตัวแทนของพระสัมมาสัมพุทธเจ้า
+        ก็จะมีจิตเลื่อมใส ช่วยปิดอบาย เปิดสวรรค์ และเข้าถึงนิพพานในที่สุด
+      </p>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-20 px-4 bg-secondary">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-accent text-sm font-semibold uppercase tracking-widest mb-2">Photo Gallery</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">ภาพองค์พระเจดีย์</h2>
+        <div class="w-16 h-1 bg-accent mx-auto rounded-full"></div>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="gallery-item rounded-2xl overflow-hidden shadow-md lg:col-span-2 row-span-1" onclick="openLightbox(this)">
+          <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn38_2_19.jpg"
+               alt="พระเจดีย์ 1" class="w-full h-72 object-cover" />
+        </div>
+        <div class="gallery-item rounded-2xl overflow-hidden shadow-md" onclick="openLightbox(this)">
+          <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn42_2_20.jpg"
+               alt="พระเจดีย์ 2" class="w-full h-72 object-cover" />
+        </div>
+        <div class="gallery-item rounded-2xl overflow-hidden shadow-md" onclick="openLightbox(this)">
+          <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn43_2_21.jpg"
+               alt="พระเจดีย์ 3" class="w-full h-60 object-cover" />
+        </div>
+        <div class="gallery-item rounded-2xl overflow-hidden shadow-md" onclick="openLightbox(this)">
+          <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn44_2_22.jpg"
+               alt="พระเจดีย์ 4" class="w-full h-60 object-cover" />
+        </div>
+        <div class="gallery-item rounded-2xl overflow-hidden shadow-md" onclick="openLightbox(this)">
+          <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn46_2_23.jpg"
+               alt="พระเจดีย์ 5" class="w-full h-60 object-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" onclick="closeLightbox()">
+    <button class="absolute top-4 right-6 text-white text-4xl font-light hover:text-gray-300 z-10">×</button>
+    <button id="prevBtn" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-5xl font-light hover:text-gray-300 z-10 px-2">‹</button>
+    <img id="lightboxImg" src="" alt="" />
+    <button id="nextBtn" class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-5xl font-light hover:text-gray-300 z-10 px-2">›</button>
+  </div>
+
+  <!-- ประวัติเจ้าอาวาส Section -->
+  <section id="abbot" class="py-20 px-4 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-accent text-sm font-semibold uppercase tracking-widest mb-2">Abbot</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">ประวัติเจ้าอาวาส</h2>
+        <div class="w-16 h-1 bg-accent mx-auto rounded-full"></div>
+      </div>
+      <!-- Profile Card -->
+      <div class="flex flex-col md:flex-row gap-8 items-center bg-secondary rounded-3xl p-8 md:p-12 shadow-md">
+        <div class="flex-shrink-0">
+          <div class="w-44 h-44 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-primary shadow-xl">
+            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/_2_17.jpg"
+                 alt="พระครูวิเทศภาวนาวิธาน" class="w-full h-full object-cover object-top" />
+          </div>
+        </div>
+        <div class="text-center md:text-left">
+          <h3 class="text-2xl font-bold text-dark mb-1">พระครูวิเทศภาวนาวิธาน</h3>
+          <p class="text-accent font-semibold mb-1">(ชาญชัย ปิยวาจโก)</p>
+          <p class="text-gray-500 text-sm mb-4 uppercase tracking-wider">เจ้าอาวาสวัดพระธรรมกายเทนเนสซี</p>
+          <div class="w-12 h-0.5 bg-accent mx-auto md:mx-0 mb-4"></div>
+          <p class="text-gray-600 leading-relaxed">
+            เจ้าอาวาสและผู้นำจิตวิญญาณของวัดพระธรรมกายเทนเนสซี
+            ผู้ทำหน้าที่เผยแผ่พระธรรมและนำคณะศรัทธาสาธุชน
+            สร้างชุมชนชาวพุทธที่เข้มแข็งในรัฐเทนเนสซีมากว่า 25 ปี
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ร่วมทำบุญ Section -->
+  <section id="donate" class="py-20 px-4 bg-dark text-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-primary/70 text-sm font-semibold uppercase tracking-widest mb-2">Make Merit</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">ร่วมทำบุญสร้างเจดีย์</h2>
+      <div class="w-16 h-1 bg-accent mx-auto rounded-full mb-8"></div>
+      <p class="text-primary/80 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
+        ขอเชิญร่วมเป็นเจ้าภาพในการสถาปนาองค์พระเจดีย์เพื่อสร้างสันติภาพโลก
+        นับเป็นบุญใหญ่ที่หาได้ยากยิ่ง ร่วมกันสร้างแสงสว่างแห่งธรรมในผืนแผ่นดินอเมริกา
+      </p>
+
+      <!-- Donation Info Cards -->
+      <div class="grid md:grid-cols-3 gap-6 mb-10">
+        <div class="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20">
+          <div class="text-4xl mb-3">🙏</div>
+          <h3 class="font-bold text-lg mb-2">ร่วมทำบุญ</h3>
+          <p class="text-primary/70 text-sm">สร้างเจดีย์เพื่อสันติภาพโลก</p>
+        </div>
+        <div class="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20">
+          <div class="text-4xl mb-3">💛</div>
+          <h3 class="font-bold text-lg mb-2">ถวายสังฆทาน</h3>
+          <p class="text-primary/70 text-sm">ร่วมอนุรักษ์พระพุทธศาสนา</p>
+        </div>
+        <div class="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20">
+          <div class="text-4xl mb-3">🕌</div>
+          <h3 class="font-bold text-lg mb-2">บูรณะปฏิสังขรณ์</h3>
+          <p class="text-primary/70 text-sm">พัฒนาวัดและสิ่งอำนวยความสะดวก</p>
+        </div>
+      </div>
+
+      <!-- Contact for donation -->
+      <div class="bg-white/10 backdrop-blur rounded-2xl p-6 md:p-8 border border-white/20 text-left">
+        <h3 class="font-bold text-xl mb-4 text-center">สอบถามการทำบุญ</h3>
+        <div class="grid md:grid-cols-3 gap-4 text-center">
+          <div>
+            <p class="text-primary/70 text-sm mb-1">โทรศัพท์</p>
+            <p class="font-semibold">083-540-6300</p>
+          </div>
+          <div>
+            <p class="text-primary/70 text-sm mb-1">อีเมล</p>
+            <p class="font-semibold">tennessee@gmail.com</p>
+          </div>
+          <div>
+            <p class="text-primary/70 text-sm mb-1">Line ID</p>
+            <p class="font-semibold">phromthep</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark border-t border-white/10 text-white pt-10 pb-6 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/LOGO_2_3.png"
+               alt="Logo" class="h-14 w-auto mb-3 opacity-90" onerror="this.style.display='none'" />
+          <h3 class="font-bold text-base mb-1">วัดพระธรรมกายเทนเนสซี</h3>
+          <p class="text-primary/60 text-sm">Dhammakaya Meditation Center Tennessee</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-primary mb-3">ที่ตั้ง</h4>
+          <p class="text-gray-300 text-sm leading-relaxed">2033 Ghee Rd,<br />Murfreesboro, TN 37127 USA</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-primary mb-3">ติดต่อ</h4>
+          <div class="space-y-1 text-sm text-gray-300">
+            <p>📞 083-540-6300</p>
+            <p>✉️ tennessee@gmail.com</p>
+            <p>💬 Line: phromthep</p>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-5 text-center text-gray-500 text-xs">
+        © 2026 วัดพระธรรมกายเทนเนสซี · All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+
+    // Gallery images for lightbox
+    const galleryImages = [
+      'https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn38_2_19.jpg',
+      'https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn42_2_20.jpg',
+      'https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn43_2_21.jpg',
+      'https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn44_2_22.jpg',
+      'https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn46_2_23.jpg',
+    ];
+    let currentIdx = 0;
+
+    function openLightbox(el) {
+      const src = el.querySelector('img').src;
+      currentIdx = galleryImages.indexOf(src);
+      if (currentIdx < 0) currentIdx = 0;
+      document.getElementById('lightboxImg').src = src;
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('prevBtn').addEventListener('click', function(e) {
+      e.stopPropagation();
+      currentIdx = (currentIdx - 1 + galleryImages.length) % galleryImages.length;
+      document.getElementById('lightboxImg').src = galleryImages[currentIdx];
+    });
+
+    document.getElementById('nextBtn').addEventListener('click', function(e) {
+      e.stopPropagation();
+      currentIdx = (currentIdx + 1) % galleryImages.length;
+      document.getElementById('lightboxImg').src = galleryImages[currentIdx];
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (document.getElementById('lightbox').classList.contains('active')) {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') {
+          currentIdx = (currentIdx - 1 + galleryImages.length) % galleryImages.length;
+          document.getElementById('lightboxImg').src = galleryImages[currentIdx];
+        }
+        if (e.key === 'ArrowRight') {
+          currentIdx = (currentIdx + 1) % galleryImages.length;
+          document.getElementById('lightboxImg').src = galleryImages[currentIdx];
+        }
+      }
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function(e) {
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
