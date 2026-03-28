@@ -1,299 +1,282 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        primary: '#8B6914',
-        secondary: '#F5F0E8',
-        accent: '#6B5010',
-        dark: '#3D3228',
-        cream: '#FAF7F0',
-        gold: { 50:'#FBF8F0', 100:'#F5EDD8', 200:'#EBDBB1', 300:'#DFC585', 400:'#D4AF5B', 500:'#8B6914', 600:'#6B5010', 700:'#4D3A0C', 800:'#3D3228', 900:'#2A2118' }
-      },
-      fontFamily: { sarabun: ['Sarabun', 'sans-serif'] }
-    }
-  }
-}
-</script>
-<style>
-  body { font-family: 'Sarabun', sans-serif; }
-  .hero-gradient { background: linear-gradient(135deg, rgba(59,43,20,0.85) 0%, rgba(139,105,20,0.7) 50%, rgba(59,43,20,0.85) 100%); }
-  .gold-gradient { background: linear-gradient(135deg, #8B6914 0%, #D4AF5B 50%, #8B6914 100%); }
-  .card-hover { transition: all 0.3s ease; }
-  .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(139,105,20,0.15); }
-  .gallery-img { transition: all 0.5s ease; }
-  .gallery-img:hover { transform: scale(1.05); }
-  html { scroll-behavior: smooth; }
-  .fade-in { opacity: 0; transform: translateY(20px); animation: fadeIn 0.8s ease forwards; }
-  @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
-  .nav-scrolled { background: rgba(61,50,40,0.98) !important; backdrop-filter: blur(10px); }
-</style>
-<title>เกี่ยวกับวัด | วัดพระธรรมกายเทนเนสซี</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เกี่ยวกับวัด | วัดพระธรรมกายเทนเนสซี</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: { extend: {
+                colors: { primary: '#8B6914', secondary: '#F5F0E8', accent: '#6B5010', dark: '#3D3228' },
+                fontFamily: { sarabun: ['Sarabun', 'sans-serif'] }
+            }}
+        }
+    </script>
+    <style>
+        * { font-family: 'Sarabun', sans-serif; }
+        html { scroll-behavior: smooth; }
+        .nav-scrolled { background: rgba(61, 50, 40, 0.95) !important; backdrop-filter: blur(10px); }
+        .lightbox { display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,0.9); align-items: center; justify-content: center; }
+        .lightbox.active { display: flex; }
+        .gallery-item:hover img { transform: scale(1.05); }
+    </style>
 </head>
-<body class="bg-cream text-dark">
+<body class="bg-secondary text-dark">
 
-<nav id="mainNav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" style="background: rgba(61,50,40,0.9);">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16 lg:h-20">
-      <a href="index.html" class="flex items-center gap-3">
-        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/LOGO-resize_2_50.png" alt="Logo" class="h-10 lg:h-14 w-auto">
-        <div class="hidden sm:block">
-          <div class="text-gold-300 font-semibold text-sm lg:text-base leading-tight">วัดพระธรรมกายเทนเนสซี</div>
-          <div class="text-gray-400 text-xs">Dhammakaya Meditation Center Tennessee</div>
-        </div>
-      </a>
-      <div class="hidden md:flex items-center gap-6 lg:gap-8">
-        <a href="index.html" class="text-gray-300 hover:text-gold-300 transition-colors text-sm lg:text-base">หน้าแรก</a>
-        <a href="about.html" class="text-gold-300 font-semibold transition-colors text-sm lg:text-base">เกี่ยวกับวัด</a>
-        <a href="pagoda.html" class="text-gray-300 hover:text-gold-300 transition-colors text-sm lg:text-base">สถาปนาเจดีย์</a>
-      </div>
-      <button class="md:hidden text-gold-300 p-2" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-      </button>
-    </div>
-  </div>
-  <div id="mobileMenu" class="hidden md:hidden bg-dark/95 border-t border-gold-700/30">
-    <div class="px-4 py-4 space-y-3">
-      <a href="index.html" class="text-gray-300 hover:text-gold-300 block py-2">หน้าแรก</a>
-      <a href="about.html" class="text-gold-300 font-semibold block py-2">เกี่ยวกับวัด</a>
-      <a href="pagoda.html" class="text-gray-300 hover:text-gold-300 block py-2">สถาปนาเจดีย์</a>
-    </div>
-  </div>
-</nav>
-<script>
-window.addEventListener('scroll', () => {
-  const nav = document.getElementById('mainNav');
-  if (window.scrollY > 50) nav.classList.add('nav-scrolled');
-  else nav.classList.remove('nav-scrolled');
-});
-</script>
-
-<!-- Page Header -->
-<section class="relative h-72 lg:h-96 flex items-end overflow-hidden">
-  <div class="absolute inset-0">
-    <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKTW9393_2_34.jpg" alt="เกี่ยวกับวัด" class="w-full h-full object-cover">
-    <div class="hero-gradient absolute inset-0"></div>
-  </div>
-  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 w-full">
-    <h1 class="text-3xl lg:text-5xl font-bold text-white mb-2">เกี่ยวกับวัด</h1>
-    <p class="text-gold-200 text-lg">ประวัติ สถานที่ และเจ้าอาวาส</p>
-  </div>
-</section>
-
-<!-- Abbot Section -->
-<section class="py-16 lg:py-24 bg-cream">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gold-100">
-      <div class="grid grid-cols-1 lg:grid-cols-2">
-        <div class="relative">
-          <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/01_2_40.jpg" alt="เจ้าอาวาส" class="w-full h-full object-cover min-h-[400px]">
-          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-dark/80 to-transparent p-6 lg:hidden">
-            <h2 class="text-xl font-bold text-white">พระครูวิเทศภาวนาวิธาน (ชาญชัย ปิยวาจโก)</h2>
-          </div>
-        </div>
-        <div class="p-8 lg:p-12 flex flex-col justify-center">
-          <div class="inline-block bg-primary/10 text-primary text-sm font-semibold px-4 py-2 rounded-full mb-4 w-fit">เจ้าอาวาส</div>
-          <h2 class="text-2xl lg:text-3xl font-bold text-dark mb-2">พระครูวิเทศภาวนาวิธาน (ชาญชัย ปิยวาจโก)</h2>
-          <p class="text-primary font-medium mb-4">เจ้าอาวาสวัดพระธรรมกายเทนเนสซี</p>
-          <div class="w-12 h-0.5 bg-primary mb-6"></div>
-          <p class="text-gray-600 leading-relaxed">ผู้นำทางจิตวิญญาณของวัดพระธรรมกายเทนเนสซี ผู้อุทิศตนเพื่อการเผยแผ่พระพุทธศาสนาและวิชชาธรรมกายในรัฐเทนเนสซี ท่านมีบทบาทสำคัญในการนำพาหมู่คณะพัฒนาวัด จนถึงการริเริ่มโครงการก่อสร้างอาคารปฏิบัติธรรมแก้วธรรมชัยรัตนอนันต์ และโครงการสถาปนาองค์พระเจดีย์ องค์แรกในอเมริกา</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Places Section -->
-<section class="py-16 lg:py-24 bg-secondary">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-3">สถานที่ภายในวัด</h2>
-      <div class="w-20 h-1 gold-gradient mx-auto rounded-full"></div>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      
-        <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover border border-gold-100">
-          <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/_2_87.jpg" alt="กุฏิ และห้องปฏิบัติธรรมเดิม" class="w-full h-56 object-cover">
-          <div class="p-6">
-            <h3 class="text-lg font-bold text-dark mb-2">กุฏิ และห้องปฏิบัติธรรมเดิม</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">อาคารหลังแรกของวัด สถานที่ที่เปี่ยมด้วยความทรงจำตั้งแต่วันแรกที่ก่อตั้ง ใช้เป็นทั้งกุฏิพระและห้องปฏิบัติธรรมมาตั้งแต่ปี พ.ศ. 2555 เป็นจุดเริ่มต้นที่บ่มเพาะศรัทธาของหมู่คณะชาวเทนเนสซี</p>
-            <div class="grid grid-cols-2 gap-2 mt-3"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/DMC01588_2_91.jpg" alt="" class="w-full h-24 object-cover rounded-lg"></div>
-          </div>
-        </div>
-        <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover border border-gold-100">
-          <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/_MG_4646_2_88.jpg" alt="อาคารเอนกประสงค์" class="w-full h-56 object-cover">
-          <div class="p-6">
-            <h3 class="text-lg font-bold text-dark mb-2">อาคารเอนกประสงค์</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">สร้างขึ้นเพื่อขยายพื้นที่รองรับกิจกรรมที่มีผู้เข้าร่วมจำนวนมาก ใช้จัดพิธีเวียนเทียน บูชาเจดีย์ งานสงกรานต์ และกิจกรรมพิเศษในโอกาสต่างๆ</p>
-            <div class="grid grid-cols-2 gap-2 mt-3"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/_MG_8517_2_89.jpg" alt="" class="w-full h-24 object-cover rounded-lg"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/_MG_8112_2_90.jpg" alt="" class="w-full h-24 object-cover rounded-lg"></div>
-          </div>
-        </div>
-        <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover border border-gold-100">
-          <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/DMC01105_2_92.jpg" alt="ลานหินปฏิบัติธรรม" class="w-full h-56 object-cover">
-          <div class="p-6">
-            <h3 class="text-lg font-bold text-dark mb-2">ลานหินปฏิบัติธรรม</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">สถานที่พิเศษสำหรับการนั่งสมาธิกลางแจ้ง ล้อมรอบด้วยธรรมชาติอันเงียบสงบ ผู้ปฏิบัติธรรมจะได้สัมผัสบรรยากาศแห่งความสงบเย็นของรัฐเทนเนสซี</p>
-            <div class="grid grid-cols-2 gap-2 mt-3"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/DMC01111_2_93.jpg" alt="" class="w-full h-24 object-cover rounded-lg"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/DMC01478_2_94.jpg" alt="" class="w-full h-24 object-cover rounded-lg"></div>
-          </div>
-        </div>
-    </div>
-  </div>
-</section>
-
-<!-- Building Section -->
-<section class="py-16 lg:py-24 bg-cream">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-3">อาคารปฏิบัติธรรม</h2>
-      <p class="text-xl text-primary font-medium">แก้วธรรมชัยรัตนอนันต์</p>
-      <div class="w-20 h-1 gold-gradient mx-auto rounded-full mt-4"></div>
-    </div>
-    
-        <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg card-hover border border-gold-100 mb-8 fade-in" style="animation-delay: 0.0s">
-          <div class="flex items-start gap-4">
-            <div class="flex-shrink-0 w-16 h-16 gold-gradient rounded-full flex items-center justify-center text-white font-bold text-sm text-center leading-tight">พ.ศ. 2567</div>
-            <div class="flex-1">
-              <h3 class="text-xl font-bold text-dark mb-2">ชื่ออันเป็นมงคล</h3>
-              <p class="text-gray-600 text-sm leading-relaxed">ส่วนกลางเมตตามอบชื่ออาคารว่า แก้วธรรมชัยรัตนอนันต์ พร้อมมอบดวงแก้วขนาด 29.7 ซม. ชื่อ แก้วบรมจักรพรรดิรัตนอนันต์ โดยหลวงพ่อทัตตชีโว เมตตาอธิษฐานจิตปิดแผ่นทอง วันที่ 24 มีนาคม พ.ศ. 2567</p>
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-dark/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <div class="flex items-center space-x-3">
+                    <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/LOGO-resize_2_50.png" alt="Logo" class="h-10 md:h-14 w-auto">
+                    <div class="hidden sm:block"><h1 class="text-white text-sm md:text-base font-semibold leading-tight">วัดพระธรรมกายเทนเนสซี</h1><p class="text-primary text-xs md:text-sm">Dhammakaya Meditation Center TN</p></div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-300 hover:text-primary transition-colors">หน้าแรก</a>
+                    <a href="about.html" class="text-primary font-semibold border-b-2 border-primary pb-1">เกี่ยวกับวัด</a>
+                    <a href="pagoda.html" class="text-gray-300 hover:text-primary transition-colors">สถาปนาเจดีย์</a>
+                    <a href="pagoda.html#donate" class="bg-primary text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-accent transition-colors">ร่วมบุญ</a>
+                </div>
+                <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="md:hidden text-white text-2xl"><i class="fas fa-bars"></i></button>
             </div>
-          </div>
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-4"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHA2579d_1_2_98.jpg" alt="" class="rounded-lg w-full h-32 object-cover"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHA2559d_2_99.jpg" alt="" class="rounded-lg w-full h-32 object-cover"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHB1601d_2_100.jpg" alt="" class="rounded-lg w-full h-32 object-cover"></div>
         </div>
-        <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg card-hover border border-gold-100 mb-8 fade-in" style="animation-delay: 0.15s">
-          <div class="flex items-start gap-4">
-            <div class="flex-shrink-0 w-16 h-16 gold-gradient rounded-full flex items-center justify-center text-white font-bold text-sm text-center leading-tight">3 เมษายน 2567</div>
-            <div class="flex-1">
-              <h3 class="text-xl font-bold text-dark mb-2">พิธีสมโภชและโปรยรัตนชาติ</h3>
-              <p class="text-gray-600 text-sm leading-relaxed">พระธรรมรัตนภรณ์ ที่ปรึกษาเจ้าคณะภาค 1 พร้อมคณะสงฆ์จากประเทศไทย เมตตาเดินทางมาเจริญพระพุทธมนต์สมโภชดวงแก้วและโปรยรัตนชาติ ณ สถานที่ก่อสร้าง</p>
+        <div id="mobileMenu" class="hidden md:hidden bg-dark/95 border-t border-primary/20">
+            <div class="px-4 py-4 space-y-3">
+                <a href="index.html" class="block text-gray-300 hover:text-primary py-2">หน้าแรก</a>
+                <a href="about.html" class="block text-gray-300 hover:text-primary py-2">เกี่ยวกับวัด</a>
+                <a href="pagoda.html" class="block text-gray-300 hover:text-primary py-2">สถาปนาเจดีย์</a>
+                <a href="pagoda.html#donate" class="block bg-primary text-white text-center px-5 py-2 rounded-full font-semibold mt-2">ร่วมบุญ</a>
             </div>
-          </div>
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-4"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHA4410d_2_101.jpg" alt="" class="rounded-lg w-full h-32 object-cover"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHB8616d_2_102.jpg" alt="" class="rounded-lg w-full h-32 object-cover"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHB8635d_2_103.jpg" alt="" class="rounded-lg w-full h-32 object-cover"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHB9181d_2_104.jpg" alt="" class="rounded-lg w-full h-32 object-cover"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHB9145d_2_105.jpg" alt="" class="rounded-lg w-full h-32 object-cover"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHB9228d_2_106.jpg" alt="" class="rounded-lg w-full h-32 object-cover"></div>
         </div>
-        <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg card-hover border border-gold-100 mb-8 fade-in" style="animation-delay: 0.3s">
-          <div class="flex items-start gap-4">
-            <div class="flex-shrink-0 w-16 h-16 gold-gradient rounded-full flex items-center justify-center text-white font-bold text-sm text-center leading-tight">10 เดือน</div>
-            <div class="flex-1">
-              <h3 class="text-xl font-bold text-dark mb-2">เส้นทางการก่อสร้าง</h3>
-              <p class="text-gray-600 text-sm leading-relaxed">การก่อสร้างดำเนินไปตลอด 10 เดือน ตั้งแต่การเตรียมพื้นที่ วางโครงสร้าง ตกแต่งภายใน ปรับปรุงถนนหน้าอาคาร ไปจนถึงลานจอดรถ ทุกขั้นตอนสำเร็จลุล่วงด้วยดี ด้วยกำลังศรัทธาจากลูกพระธัมฯทั่วโลกและชาวเทนเนสซี</p>
-            </div>
-          </div>
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-4"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHB0202_2_109.jpg" alt="" class="rounded-lg w-full h-32 object-cover"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHB0733_2_111.jpg" alt="" class="rounded-lg w-full h-32 object-cover"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHB0737_2_112.jpg" alt="" class="rounded-lg w-full h-32 object-cover"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKTW9437_2_113.jpg" alt="" class="rounded-lg w-full h-32 object-cover"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHB0656_2_114.jpg" alt="" class="rounded-lg w-full h-32 object-cover"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHB0213_2_115.jpg" alt="" class="rounded-lg w-full h-32 object-cover"></div>
-        </div>
-        <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg card-hover border border-gold-100 mb-8 fade-in" style="animation-delay: 0.44999999999999996s">
-          <div class="flex items-start gap-4">
-            <div class="flex-shrink-0 w-16 h-16 gold-gradient rounded-full flex items-center justify-center text-white font-bold text-sm text-center leading-tight">21 ธันวาคม 2568</div>
-            <div class="flex-1">
-              <h3 class="text-xl font-bold text-dark mb-2">พิธีปิดแผ่นทองป้ายอาคาร</h3>
-              <p class="text-gray-600 text-sm leading-relaxed">วันที่ 21 ธันวาคม พ.ศ. 2568 ซึ่งตรงกับวันคล้ายวันเกิดหลวงพ่อทัตตชีโว ได้จัดพิธีปิดแผ่นทองป้ายอาคารแก้วธรรมชัยรัตนอนันต์ ณ อาคารปลูกศรัทธา วัดพระธรรมกาย ประเทศไทย เป็นสัญลักษณ์แห่งความสำเร็จที่รอคอยมานาน</p>
-            </div>
-          </div>
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-4"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHA0092d_2_119.jpg" alt="" class="rounded-lg w-full h-32 object-cover"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHA0620d_2_120.jpg" alt="" class="rounded-lg w-full h-32 object-cover"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHA0399d_2_121.jpg" alt="" class="rounded-lg w-full h-32 object-cover"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHA0657d_2_122.jpg" alt="" class="rounded-lg w-full h-32 object-cover"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHA0757d_2_123.jpg" alt="" class="rounded-lg w-full h-32 object-cover"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHA1003d_2_124.jpg" alt="" class="rounded-lg w-full h-32 object-cover"></div>
-        </div>
-        <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg card-hover border border-gold-100 mb-8 fade-in" style="animation-delay: 0.6s">
-          <div class="flex items-start gap-4">
-            <div class="flex-shrink-0 w-16 h-16 gold-gradient rounded-full flex items-center justify-center text-white font-bold text-sm text-center leading-tight">20 กรกฎาคม 2568</div>
-            <div class="flex-1">
-              <h3 class="text-xl font-bold text-dark mb-2">พิธีฉลองอาคาร</h3>
-              <p class="text-gray-600 text-sm leading-relaxed">พิธีทอดผ้าป่าสามัคคีภาคพื้นอเมริกา ฉลองอาคารปฏิบัติธรรมแก้วธรรมชัยรัตนอนันต์ นิมนต์เจ้าอาวาสวัดพระธรรมกายทั่วภาคพื้นอเมริกามาเป็นเนื้อนาบุญ นับเป็นจุดเริ่มต้นแห่งการขยายบุญสถานที่เป็นถาวรวัตถุ<br>"นับเป็นจุดเริ่มต้นแห่งการขยายบุญสถานที่เป็นถาวรวัตถุ เพื่อรองรับผู้มีบุญที่จะมาสั่งสมบุญ สร้างบารมี ณ ดินแดนแห่งนี้ต่อไปในอนาคต"</p>
-            </div>
-          </div>
-          
-        </div>
-    
-    <div class="mt-8">
-      <h3 class="text-xl font-semibold text-dark mb-4 text-center">ภาพบรรยากาศอาคาร</h3>
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKTW0463d_2_128.jpg" alt="" class="rounded-xl w-full h-48 object-cover gallery-img"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKTW0428d_2_129.jpg" alt="" class="rounded-xl w-full h-48 object-cover gallery-img"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHA0946d_2_130.jpg" alt="" class="rounded-xl w-full h-48 object-cover gallery-img"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKTW0197d_2_131.jpg" alt="" class="rounded-xl w-full h-48 object-cover gallery-img"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHA1113d_2_132.jpg" alt="" class="rounded-xl w-full h-48 object-cover gallery-img"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKTW0152d_2_133.jpg" alt="" class="rounded-xl w-full h-48 object-cover gallery-img"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKTW0197d_2_134.jpg" alt="" class="rounded-xl w-full h-48 object-cover gallery-img"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHB1662d_2_135.jpg" alt="" class="rounded-xl w-full h-48 object-cover gallery-img"></div>
-    </div>
-  </div>
-</section>
+    </nav>
 
-<!-- Donation Section -->
-<section class="py-16 lg:py-24 bg-secondary">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-3">ช่องทางร่วมบุญ</h2>
-      <div class="w-20 h-1 gold-gradient mx-auto rounded-full"></div>
-    </div>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      <div class="bg-white rounded-2xl p-8 shadow-lg border border-gold-100 card-hover">
-        <div class="text-center mb-6">
-          <div class="inline-block bg-primary/10 text-primary text-sm font-semibold px-4 py-2 rounded-full mb-3">🇹🇭 บัญชีไทย</div>
-          <h3 class="text-xl font-bold text-dark">ธนาคารออมสิน</h3>
+    <!-- Hero Banner -->
+    <section class="relative h-[50vh] min-h-[400px] overflow-hidden mt-16 md:mt-20">
+        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/DJI_0293_2_7.jpg" alt="" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/40 to-transparent"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center"><h1 class="text-4xl md:text-5xl font-bold text-white mb-3">เกี่ยวกับวัด</h1><p class="text-primary text-lg">About the Temple</p></div>
         </div>
-        <div class="space-y-3 text-center">
-          <p class="text-gray-600">ชื่อบัญชี: <span class="font-semibold text-dark">วัดพระธรรมกายเทนเนสซี</span></p>
-          <p class="text-2xl font-bold text-primary tracking-wider">020476296874</p>
-        </div>
-        <div class="mt-6 flex justify-center"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/_2_160.jpg" alt="QR Code" class="max-w-xs w-full rounded-xl shadow-md"></div>
-      </div>
-      <div class="bg-white rounded-2xl p-8 shadow-lg border border-gold-100 card-hover">
-        <div class="text-center mb-6">
-          <div class="inline-block bg-primary/10 text-primary text-sm font-semibold px-4 py-2 rounded-full mb-3">🇺🇸 USA Account</div>
-          <h3 class="text-xl font-bold text-dark">DMCTN</h3>
-        </div>
-        <div class="space-y-4 text-center">
-          <div class="bg-secondary rounded-xl p-4">
-            <p class="text-gray-600 text-sm mb-1">Make check payable to:</p>
-            <p class="text-xl font-bold text-primary">DMCTN</p>
-          </div>
-          <div class="bg-secondary rounded-xl p-4">
-            <p class="text-gray-600 text-sm mb-1">Zelle:</p>
-            <p class="text-lg font-semibold text-primary">dmctn2023@gmail.com</p>
-          </div>
-        </div>
-        <div class="mt-6 text-center">
-          <div class="bg-gradient-to-r from-primary/10 via-gold-100 to-primary/10 rounded-xl p-4">
-            <p class="text-primary font-semibold">ร่วมบุญแผ่นทองจารึกชื่อเจดีย์</p>
-            <p class="text-2xl font-bold text-accent mt-1">1 กอง = $150 (5,000 บาท)</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<footer class="bg-dark text-gray-300">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div>
-        <div class="flex items-center gap-3 mb-4">
-          <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/LOGO-resize_2_50.png" alt="Logo" class="h-12 w-auto">
-          <div>
-            <div class="text-gold-300 font-semibold">วัดพระธรรมกายเทนเนสซี</div>
-            <div class="text-gray-500 text-sm">Dhammakaya Meditation Center Tennessee</div>
-          </div>
+    <!-- Abbot Section -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="md:w-2/5">
+                    <div class="relative">
+                        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/01_2_40.jpg" alt="เจ้าอาวาส" class="rounded-2xl shadow-2xl w-full object-cover">
+                        <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/10 rounded-full -z-10"></div>
+                    </div>
+                </div>
+                <div class="md:w-3/5">
+                    <span class="inline-block bg-primary/10 text-primary text-sm font-bold px-4 py-2 rounded-full mb-4">เจ้าอาวาส</span>
+                    <h2 class="text-2xl md:text-3xl font-bold text-dark mb-2">พระครูวิเทศภาวนาวิธาน</h2>
+                    <p class="text-primary font-medium mb-1">(ชาญชัย ปิยวาจโก)</p>
+                    <p class="text-gray-500 mb-6">เจ้าอาวาสวัดพระธรรมกายเทนเนสซี</p>
+                    <p class="text-gray-600 leading-relaxed text-lg">ผู้นำทางจิตวิญญาณของวัดพระธรรมกายเทนเนสซี ผู้อุทิศตนเพื่อการเผยแผ่พระพุทธศาสนาและวิชชาธรรมกายในรัฐเทนเนสซี ท่านมีบทบาทสำคัญในการนำพาหมู่คณะพัฒนาวัด จนถึงการริเริ่มโครงการก่อสร้างอาคารปฏิบัติธรรมแก้วธรรมชัยรัตนอนันต์ และโครงการสถาปนาองค์พระเจดีย์ องค์แรกในอเมริกา</p>
+                </div>
+            </div>
         </div>
-        <p class="text-gray-400 text-sm leading-relaxed">ศูนย์ปฏิบัติธรรมแห่งสันติภาพ ใจกลางรัฐเทนเนสซี สหรัฐอเมริกา</p>
-      </div>
-      <div>
-        <h4 class="text-gold-300 font-semibold mb-4">ติดต่อเรา</h4>
-        <div class="space-y-2 text-sm text-gray-400">
-          <p>📍 2033 Ghee Rd, Murfreesboro, TN 37127 USA</p>
-          <p>📞 +1 (615) 752-1292</p>
-          <p>✉️ tennessee@gmail.com</p>
-        </div>
-      </div>
-      <div>
-        <h4 class="text-gold-300 font-semibold mb-4">ช่องทางติดตาม</h4>
-        <div class="flex gap-4">
-          <a href="https://www.facebook.com/072dmctn" target="_blank" class="bg-gold-700/30 hover:bg-gold-700/50 text-gold-300 w-10 h-10 rounded-full flex items-center justify-center transition-colors">FB</a>
-          <a href="https://www.youtube.com/@DMCTN072" target="_blank" class="bg-gold-700/30 hover:bg-gold-700/50 text-gold-300 w-10 h-10 rounded-full flex items-center justify-center transition-colors">YT</a>
-        </div>
-      </div>
-    </div>
-    <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm text-gray-500">
-      © 2024 วัดพระธรรมกายเทนเนสซี | Dhammakaya Meditation Center Tennessee
-    </div>
-  </div>
-</footer>
+    </section>
 
-</body>
-</html>
+    <!-- Temple Places -->
+    <section class="py-16 md:py-24 bg-secondary">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12"><h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">สถานที่ภายในวัด</h2><div class="w-24 h-1 bg-primary mx-auto rounded-full"></div></div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Place 1 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden group">
+                    <div class="h-56 overflow-hidden"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/_2_87.jpg" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-dark mb-2">กุฏิ และห้องปฏิบัติธรรมเดิม</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">อาคารหลังแรกของวัด สถานที่ที่เปี่ยมด้วยความทรงจำตั้งแต่วันแรกที่ก่อตั้ง ใช้เป็นทั้งกุฏิพระและห้องปฏิบัติธรรมมาตั้งแต่ปี พ.ศ. 2555</p>
+                    </div>
+                </div>
+                <!-- Place 2 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden group">
+                    <div class="h-56 overflow-hidden"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/_MG_4646_2_88.jpg" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-dark mb-2">อาคารเอนกประสงค์</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">สร้างขึ้นเพื่อขยายพื้นที่รองรับกิจกรรมที่มีผู้เข้าร่วมจำนวนมาก ใช้จัดพิธีเวียนเทียน บูชาเจดีย์ งานสงกรานต์ และกิจกรรมพิเศษ</p>
+                    </div>
+                </div>
+                <!-- Place 3 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden group">
+                    <div class="h-56 overflow-hidden"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/DMC01105_2_92.jpg" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-dark mb-2">ลานหินปฏิบัติธรรม</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">สถานที่พิเศษสำหรับการนั่งสมาธิกลางแจ้ง ล้อมรอบด้วยธรรมชาติอันเงียบสงบ ผู้ปฏิบัติธรรมจะได้สัมผัสบรรยากาศแห่งความสงบเย็น</p>
+                    </div>
+                </div>
+            </div>
+            <!-- More place photos -->
+            <div class="grid grid-cols-3 md:grid-cols-6 gap-2 mt-8">
+                <div class="gallery-item rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(this.querySelector('img').src)"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/DMC01111_2_93.jpg" alt="" class="w-full h-24 md:h-32 object-cover transition-transform duration-500"></div>
+                <div class="gallery-item rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(this.querySelector('img').src)"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/DMC01478_2_94.jpg" alt="" class="w-full h-24 md:h-32 object-cover transition-transform duration-500"></div>
+                <div class="gallery-item rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(this.querySelector('img').src)"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/DMC01487_2_95.jpg" alt="" class="w-full h-24 md:h-32 object-cover transition-transform duration-500"></div>
+                <div class="gallery-item rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(this.querySelector('img').src)"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/DMC01489_2_96.jpg" alt="" class="w-full h-24 md:h-32 object-cover transition-transform duration-500"></div>
+                <div class="gallery-item rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(this.querySelector('img').src)"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/DMC01499_2_97.jpg" alt="" class="w-full h-24 md:h-32 object-cover transition-transform duration-500"></div>
+                <div class="gallery-item rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(this.querySelector('img').src)"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/DMC01588_2_91.jpg" alt="" class="w-full h-24 md:h-32 object-cover transition-transform duration-500"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Building Timeline -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">อาคารปฏิบัติธรรม แก้วธรรมชัยรัตนอนันต์</h2>
+                <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Timeline items -->
+            <div class="space-y-16">
+                <!-- Item 1 -->
+                <div class="flex flex-col md:flex-row gap-8 items-start">
+                    <div class="md:w-1/3 flex-shrink-0">
+                        <div class="grid grid-cols-2 gap-2">
+                            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHA2579d_1_2_98.jpg" alt="" class="rounded-xl w-full h-32 object-cover cursor-pointer" onclick="openLightbox(this.src)">
+                            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHA2559d_2_99.jpg" alt="" class="rounded-xl w-full h-32 object-cover cursor-pointer" onclick="openLightbox(this.src)">
+                            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHB1601d_2_100.jpg" alt="" class="rounded-xl col-span-2 w-full h-32 object-cover cursor-pointer" onclick="openLightbox(this.src)">
+                        </div>
+                    </div>
+                    <div class="md:w-2/3">
+                        <span class="inline-block bg-primary text-white text-sm font-bold px-4 py-1 rounded-full mb-3">พ.ศ. 2567</span>
+                        <h3 class="text-xl font-bold text-dark mb-3">ชื่ออันเป็นมงคล</h3>
+                        <p class="text-gray-600 leading-relaxed">ส่วนกลางเมตตามอบชื่ออาคารว่า แก้วธรรมชัยรัตนอนันต์ พร้อมมอบดวงแก้วขนาด 29.7 ซม. ชื่อ แก้วบรมจักรพรรดิรัตนอนันต์ โดยหลวงพ่อทัตตชีโว เมตตาอธิษฐานจิตปิดแผ่นทอง วันที่ 24 มีนาคม พ.ศ. 2567</p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="flex flex-col md:flex-row-reverse gap-8 items-start">
+                    <div class="md:w-1/3 flex-shrink-0">
+                        <div class="grid grid-cols-2 gap-2">
+                            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHA4410d_2_101.jpg" alt="" class="rounded-xl w-full h-32 object-cover cursor-pointer" onclick="openLightbox(this.src)">
+                            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHB8616d_2_102.jpg" alt="" class="rounded-xl w-full h-32 object-cover cursor-pointer" onclick="openLightbox(this.src)">
+                            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHB9181d_2_104.jpg" alt="" class="rounded-xl w-full h-32 object-cover cursor-pointer" onclick="openLightbox(this.src)">
+                            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHB9409d_2_107.jpg" alt="" class="rounded-xl w-full h-32 object-cover cursor-pointer" onclick="openLightbox(this.src)">
+                        </div>
+                    </div>
+                    <div class="md:w-2/3">
+                        <span class="inline-block bg-primary text-white text-sm font-bold px-4 py-1 rounded-full mb-3">3 เมษายน 2567</span>
+                        <h3 class="text-xl font-bold text-dark mb-3">พิธีสมโภชและโปรยรัตนชาติ</h3>
+                        <p class="text-gray-600 leading-relaxed">พระธรรมรัตนภรณ์ ที่ปรึกษาเจ้าคณะภาค 1 พร้อมคณะสงฆ์จากประเทศไทย เมตตาเดินทางมาเจริญพระพุทธมนต์สมโภชดวงแก้วและโปรยรัตนชาติ ณ สถานที่ก่อสร้าง</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="flex flex-col md:flex-row gap-8 items-start">
+                    <div class="md:w-1/3 flex-shrink-0">
+                        <div class="grid grid-cols-3 gap-2">
+                            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHB0202_2_109.jpg" alt="" class="rounded-xl w-full h-24 object-cover cursor-pointer" onclick="openLightbox(this.src)">
+                            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHB0733_2_111.jpg" alt="" class="rounded-xl w-full h-24 object-cover cursor-pointer" onclick="openLightbox(this.src)">
+                            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKTW9437_2_113.jpg" alt="" class="rounded-xl w-full h-24 object-cover cursor-pointer" onclick="openLightbox(this.src)">
+                            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/DJI_0183_2_165.jpg" alt="" class="rounded-xl w-full h-24 object-cover cursor-pointer" onclick="openLightbox(this.src)">
+                            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/DJI_0432_2_166.jpg" alt="" class="rounded-xl w-full h-24 object-cover cursor-pointer" onclick="openLightbox(this.src)">
+                            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/DJI_0687_2_168.jpg" alt="" class="rounded-xl w-full h-24 object-cover cursor-pointer" onclick="openLightbox(this.src)">
+                        </div>
+                    </div>
+                    <div class="md:w-2/3">
+                        <span class="inline-block bg-primary text-white text-sm font-bold px-4 py-1 rounded-full mb-3">10 เดือน</span>
+                        <h3 class="text-xl font-bold text-dark mb-3">เส้นทางการก่อสร้าง</h3>
+                        <p class="text-gray-600 leading-relaxed">การก่อสร้างดำเนินไปตลอด 10 เดือน ตั้งแต่การเตรียมพื้นที่ วางโครงสร้าง ตกแต่งภายใน ปรับปรุงถนนหน้าอาคาร ไปจนถึงลานจอดรถ ทุกขั้นตอนสำเร็จลุล่วงด้วยดี ด้วยกำลังศรัทธาจากลูกพระธัมฯทั่วโลกและชาวเทนเนสซี</p>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="flex flex-col md:flex-row-reverse gap-8 items-start">
+                    <div class="md:w-1/3 flex-shrink-0">
+                        <div class="grid grid-cols-2 gap-2">
+                            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHA0092d_2_119.jpg" alt="" class="rounded-xl w-full h-32 object-cover cursor-pointer" onclick="openLightbox(this.src)">
+                            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHA0620d_2_120.jpg" alt="" class="rounded-xl w-full h-32 object-cover cursor-pointer" onclick="openLightbox(this.src)">
+                            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHA0657d_2_122.jpg" alt="" class="rounded-xl w-full h-32 object-cover cursor-pointer" onclick="openLightbox(this.src)">
+                            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHA1003d_2_124.jpg" alt="" class="rounded-xl w-full h-32 object-cover cursor-pointer" onclick="openLightbox(this.src)">
+                        </div>
+                    </div>
+                    <div class="md:w-2/3">
+                        <span class="inline-block bg-primary text-white text-sm font-bold px-4 py-1 rounded-full mb-3">21 ธันวาคม 2568</span>
+                        <h3 class="text-xl font-bold text-dark mb-3">พิธีปิดแผ่นทองป้ายอาคาร</h3>
+                        <p class="text-gray-600 leading-relaxed">วันที่ 21 ธันวาคม พ.ศ. 2568 ซึ่งตรงกับวันคล้ายวันเกิดหลวงพ่อทัตตชีโว ได้จัดพิธีปิดแผ่นทองป้ายอาคารแก้วธรรมชัยรัตนอนันต์ ณ อาคารปลูกศรัทธา วัดพระธรรมกาย ประเทศไทย</p>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="flex flex-col md:flex-row gap-8 items-start">
+                    <div class="md:w-1/3 flex-shrink-0">
+                        <div class="grid grid-cols-2 gap-2">
+                            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKTW0463d_2_128.jpg" alt="" class="rounded-xl w-full h-32 object-cover cursor-pointer" onclick="openLightbox(this.src)">
+                            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKTW0428d_2_129.jpg" alt="" class="rounded-xl w-full h-32 object-cover cursor-pointer" onclick="openLightbox(this.src)">
+                            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHA0946d_2_130.jpg" alt="" class="rounded-xl col-span-2 w-full h-40 object-cover cursor-pointer" onclick="openLightbox(this.src)">
+                        </div>
+                    </div>
+                    <div class="md:w-2/3">
+                        <span class="inline-block bg-primary text-white text-sm font-bold px-4 py-1 rounded-full mb-3">20 กรกฎาคม 2568</span>
+                        <h3 class="text-xl font-bold text-dark mb-3">พิธีฉลองอาคาร</h3>
+                        <p class="text-gray-600 leading-relaxed">พิธีทอดผ้าป่าสามัคคีภาคพื้นอเมริกา ฉลองอาคารปฏิบัติธรรมแก้วธรรมชัยรัตนอนันต์ นิมนต์เจ้าอาวาสวัดพระธรรมกายทั่วภาคพื้นอเมริกามาเป็นเนื้อนาบุญ นับเป็นจุดเริ่มต้นแห่งการขยายบุญสถานที่เป็นถาวรวัตถุ</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Building gallery -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-12">
+                <div class="gallery-item rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(this.querySelector('img').src)"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKTW0197d_2_131.jpg" alt="" class="w-full h-40 object-cover transition-transform duration-500"></div>
+                <div class="gallery-item rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(this.querySelector('img').src)"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHA1113d_2_132.jpg" alt="" class="w-full h-40 object-cover transition-transform duration-500"></div>
+                <div class="gallery-item rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(this.querySelector('img').src)"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHB1662d_2_135.jpg" alt="" class="w-full h-40 object-cover transition-transform duration-500"></div>
+                <div class="gallery-item rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(this.querySelector('img').src)"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHB2694d_2_136.jpg" alt="" class="w-full h-40 object-cover transition-transform duration-500"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation -->
+    <section class="py-16 md:py-24 bg-secondary">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-12"><h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">ช่องทางร่วมบุญ</h2><div class="w-24 h-1 bg-primary mx-auto rounded-full"></div></div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="flex items-center gap-3 mb-6"><div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center"><i class="fas fa-flag text-white"></i></div><h3 class="text-xl font-bold text-dark">บัญชีประเทศไทย</h3></div>
+                    <div class="space-y-3 text-gray-700">
+                        <p><span class="font-semibold">ธนาคาร:</span> ธนาคารออมสิน</p>
+                        <p><span class="font-semibold">ชื่อบัญชี:</span> วัดพระธรรมกายเทนเนสซี</p>
+                        <p><span class="font-semibold">เลขที่บัญชี:</span> <span class="text-primary font-bold text-lg">020476296874</span></p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="flex items-center gap-3 mb-6"><div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center"><i class="fas fa-globe-americas text-white"></i></div><h3 class="text-xl font-bold text-dark">USA Account</h3></div>
+                    <div class="space-y-3 text-gray-700">
+                        <p><span class="font-semibold">Check payable to:</span> <span class="text-primary font-bold text-lg">DMCTN</span></p>
+                        <p><span class="font-semibold">Zelle:</span> <span class="text-primary font-bold">dmctn2023@gmail.com</span></p>
+                    </div>
+                    <div class="mt-4 p-4 bg-primary/5 rounded-xl"><p class="text-sm text-primary font-semibold">ร่วมบุญแผ่นทองจารึกชื่อเจดีย์: 1 กอง = $150 (5,000 บาท)</p></div>
+                    <div class="mt-4"><img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/_2_160.jpg" alt="QR Code" class="w-full rounded-xl shadow-md"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-gray-400 py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-3">
+                    <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/LOGO-resize_2_50.png" alt="Logo" class="h-12 w-auto">
+                    <div><p class="text-white font-semibold">วัดพระธรรมกายเทนเนสซี</p><p class="text-primary text-sm">Dhammakaya Meditation Center Tennessee</p></div>
+                </div>
+                <div class="flex gap-4">
+                    <a href="https://www.facebook.com/072dmctn" target="_blank" class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center hover:bg-primary transition-colors"><i class="fab fa-facebook-f text-primary"></i></a>
+                    <a href="https://www.youtube.com/@DMCTN072" target="_blank" class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center hover:bg-primary transition-colors"><i class="fab fa-youtube text-primary"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm"><p>&copy; 2024 วัดพระธรรมกายเทนเนสซี | Dhammakaya Meditation Center Tennessee</p></div>
+        </div>
+    </footer>
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()"><button class="absolute top-4 right-4 text-white text-3xl z-10">&times;</button><img id="lightboxImg" src="" alt="" class="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl"></div>
+    <script>
+        window.addEventListener('scroll', () => { const n = document.getElementById('navbar'); if (window.scrollY > 100) n.classList.add('nav-scrolled'); else n.classList.remove('nav-scrolled'); });
+        function openLightbox(src) { document.getElementById('lightboxImg').src = src; document.getElementById('lightbox').classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); document.body.style.overflow = ''; }
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+    </script>
+</body></html>
