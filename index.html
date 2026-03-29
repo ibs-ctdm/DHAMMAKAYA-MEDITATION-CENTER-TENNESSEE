@@ -1,364 +1,919 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>วัดพระธรรมกายเทนเนสซี | Dhammakaya Meditation Center Tennessee</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#7BA7C9',
-                        secondary: '#F0F5FA',
-                        accent: '#4E7A9B',
-                        dark: '#2A3440',
-                    },
-                    fontFamily: {
-                        sarabun: ['Sarabun', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        * { font-family: 'Sarabun', sans-serif; }
-        .hero-gradient { background: linear-gradient(135deg, rgba(42,52,64,0.7) 0%, rgba(78,122,155,0.5) 100%); }
-        .timeline-line { position: absolute; left: 50%; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, #7BA7C9, #4E7A9B); transform: translateX(-50%); }
-        @media (max-width: 768px) { .timeline-line { left: 24px; } }
-        .gallery-item { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .gallery-item:hover { transform: scale(1.03); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
-        .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
-        .fade-up.visible { opacity: 1; transform: translateY(0); }
-        .nav-link { position: relative; }
-        .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #7BA7C9; transition: width 0.3s; }
-        .nav-link:hover::after { width: 100%; }
-        .donation-card { background: linear-gradient(135deg, #F0F5FA 0%, #fff 100%); }
-        html { scroll-behavior: smooth; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>วัดพระธรรมกายเทนเนสซี — หน้าแรก</title>
+
+  <!-- Meta Tags -->
+  <meta name="description" content="วัดพระธรรมกายเทนเนสซี - Dhammakaya Meditation Center Tennessee">
+  <meta name="theme-color" content="#8B6914">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="วัดพระธรรมกายเทนเนสซี">
+  <meta property="og:description" content="ศูนย์ปฏิบัติธรรมแห่งสันติภาพ ใจกลางรัฐเทนเนสซี สหรัฐอเมริกา">
+  <meta property="og:image" content="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKTW0225-Panod_2_164.jpg">
+  <meta property="og:url" content="https://dhammakayatennessee.org/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="th_TH">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="วัดพระธรรมกายเทนเนสซี">
+  <meta name="twitter:description" content="ศูนย์ปฏิบัติธรรมแห่งสันติภาพ">
+  <meta name="twitter:image" content="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKTW0225-Panod_2_164.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/logo-tennesse_2_186.png">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --color-primary: #8B6914;
+      --color-secondary: #F5F0E8;
+      --color-accent: #6B5010;
+      --color-dark: #3D3228;
+    }
+
+    * {
+      font-family: 'Sarabun', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--color-secondary);
+      color: var(--color-dark);
+    }
+
+    /* Navbar */
+    .navbar {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-logo {
+      height: 50px;
+      object-fit: contain;
+    }
+
+    .nav-link {
+      color: white;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #ffd700;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 600px;
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKTW0225-Panod_2_164.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      opacity: 0.8;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(61, 50, 40, 0.8) 0%, rgba(61, 50, 40, 0.3) 50%, transparent 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 3rem 2rem;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: white;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      color: #ffd700;
+      font-weight: 600;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2rem;
+      }
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+    }
+
+    /* Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding: 2rem 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--color-primary), var(--color-accent));
+      transform: translateX(-50%);
+    }
+
+    @media (max-width: 768px) {
+      .timeline::before {
+        left: 20px;
+      }
+    }
+
+    .timeline-item {
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content {
+      margin-left: 0;
+      margin-right: auto;
+      width: 45%;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content {
+      margin-left: auto;
+      margin-right: 0;
+      width: 45%;
+    }
+
+    @media (max-width: 768px) {
+      .timeline-item:nth-child(odd) .timeline-content,
+      .timeline-item:nth-child(even) .timeline-content {
+        width: 100%;
+        margin-left: 60px;
+        margin-right: 0;
+      }
+    }
+
+    .timeline-dot {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background-color: var(--color-primary);
+      border: 4px solid white;
+      border-radius: 50%;
+      left: 50%;
+      top: 20px;
+      transform: translateX(-50%);
+      z-index: 10;
+      box-shadow: 0 0 0 4px var(--color-primary);
+    }
+
+    @media (max-width: 768px) {
+      .timeline-dot {
+        left: 20px;
+      }
+    }
+
+    .timeline-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .timeline-content:hover {
+      box-shadow: 0 12px 48px rgba(139, 105, 20, 0.15);
+      transform: translateY(-4px);
+    }
+
+    .timeline-year {
+      color: var(--color-primary);
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-title {
+      color: var(--color-dark);
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .timeline-description {
+      color: #555;
+      line-height: 1.6;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .timeline-images {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .timeline-image {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .timeline-image:hover {
+      transform: scale(1.05);
+    }
+
+    /* Pagoda Section */
+    .pagoda-card {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+    }
+
+    .pagoda-content {
+      padding: 3rem;
+      color: white;
+      position: relative;
+      z-index: 10;
+    }
+
+    .pagoda-title-card {
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: #ffd700;
+    }
+
+    .pagoda-description {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+
+    .pagoda-images {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .pagoda-image {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      opacity: 0.9;
+      transition: opacity 0.3s ease;
+    }
+
+    .pagoda-image:hover {
+      opacity: 1;
+    }
+
+    .btn-pagoda {
+      background-color: #ffd700;
+      color: var(--color-dark);
+      padding: 0.875rem 2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      border: 2px solid #ffd700;
+    }
+
+    .btn-pagoda:hover {
+      background-color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Donation Section */
+    .donation-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .donation-card:hover {
+      box-shadow: 0 12px 48px rgba(139, 105, 20, 0.15);
+      transform: translateY(-4px);
+    }
+
+    .donation-label {
+      font-weight: 700;
+      color: var(--color-primary);
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+
+    .donation-value {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-dark);
+      margin-bottom: 1.5rem;
+      word-break: break-word;
+    }
+
+    .donation-note {
+      color: #666;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      white-space: pre-line;
+    }
+
+    .qr-container {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .qr-image {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 8px;
+      margin: 1rem auto;
+    }
+
+    /* Contact Section */
+    .contact-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-info {
+      margin-bottom: 2rem;
+    }
+
+    .contact-label {
+      font-weight: 700;
+      color: var(--color-primary);
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-value {
+      color: var(--color-dark);
+      font-size: 1rem;
+      line-height: 1.6;
+      word-break: break-word;
+    }
+
+    .maps-container {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      margin-top: 2rem;
+    }
+
+    .maps-container iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      .maps-container iframe {
+        height: 300px;
+      }
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+      color: white;
+      padding: 3rem 0 1.5rem;
+    }
+
+    .footer-section {
+      margin-bottom: 2rem;
+    }
+
+    .footer-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: #ffd700;
+    }
+
+    .footer-link {
+      display: block;
+      color: rgba(255, 255, 255, 0.9);
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+      transition: color 0.3s ease;
+      word-break: break-word;
+    }
+
+    .footer-link:hover {
+      color: #ffd700;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .social-icon:hover {
+      background-color: #ffd700;
+      color: var(--color-dark);
+    }
+
+    .footer-divider {
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      margin: 2rem 0;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.9rem;
+    }
+
+    /* Sections */
+    section {
+      padding: 4rem 2rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 2rem 1rem;
+      }
+
+      .section-title {
+        font-size: 1.75rem;
+        margin-bottom: 2rem;
+      }
+    }
+
+    /* Glass Effect */
+    .glass {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Container */
+    .container-custom {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 0 1rem;
+    }
+  </style>
 </head>
-<body class="bg-white text-dark">
-
-    <!-- Navbar -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16 md:h-20">
-                <a href="index.html" class="flex items-center gap-3">
-                    <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/LOGO_2_3.png" alt="Logo" class="h-10 md:h-14 w-auto">
-                    <div class="hidden sm:block">
-                        <p class="text-sm md:text-base font-semibold text-dark leading-tight">วัดพระธรรมกายเทนเนสซี</p>
-                        <p class="text-xs text-accent leading-tight">Dhammakaya Meditation Center TN</p>
-                    </div>
-                </a>
-                <div class="hidden md:flex items-center gap-8">
-                    <a href="index.html" class="nav-link text-accent font-semibold">หน้าแรก</a>
-                    <a href="about.html" class="nav-link text-dark/70 hover:text-accent font-medium">เกี่ยวกับวัด</a>
-                    <a href="pagoda.html" class="nav-link text-dark/70 hover:text-accent font-medium">สถาปนาเจดีย์</a>
-                    <a href="pagoda.html#donate" class="bg-accent hover:bg-primary text-white px-5 py-2 rounded-full text-sm font-semibold transition-all">ร่วมบุญ</a>
-                </div>
-                <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="md:hidden p-2">
-                    <svg class="w-6 h-6 text-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
-                </button>
-            </div>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar sticky top-0 z-50 shadow-lg">
+    <div class="container-custom">
+      <div class="flex items-center justify-between h-20">
+        <div class="flex items-center gap-3">
+          <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/logo-tennesse_2_186.png" alt="Logo" class="navbar-logo">
+          <div class="hidden md:block">
+            <div class="text-white font-bold text-sm">วัดพระธรรมกายเทนเนสซี</div>
+            <div class="text-yellow-300 text-xs">Dhammakaya Tennessee</div>
+          </div>
         </div>
-        <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
-            <div class="px-4 py-3 space-y-2">
-                <a href="index.html" class="block py-2 text-accent font-semibold">หน้าแรก</a>
-                <a href="about.html" class="block py-2 text-dark/70">เกี่ยวกับวัด</a>
-                <a href="pagoda.html" class="block py-2 text-dark/70">สถาปนาเจดีย์</a>
-                <a href="pagoda.html#donate" class="block py-2 text-accent font-semibold">ร่วมบุญ</a>
-            </div>
+        <div class="flex gap-8 items-center">
+          <a href="#" class="nav-link active">หน้าแรก</a>
+          <a href="about.html" class="nav-link">เกี่ยวกับวัด</a>
+          <a href="pagoda.html" class="nav-link">สถาปนาเจดีย์</a>
         </div>
-    </nav>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Hero Section -->
-    <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0">
-            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKTW0225-Panod_2_49.jpg" alt="วัดพระธรรมกายเทนเนสซี" class="w-full h-full object-cover">
-            <div class="hero-gradient absolute inset-0"></div>
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">วัดพระธรรมกายเทนเนสซี</h1>
+      <p class="hero-subtitle">Dhammakaya Meditation Center Tennessee</p>
+    </div>
+  </div>
+
+  <!-- Gallery Section -->
+  <section data-section-id="23" class="bg-white">
+    <div class="container-custom">
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/09_2_51.jpg" alt="Temple Gallery 1">
         </div>
-        <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/LOGO_2_3.png" alt="Logo" class="h-24 md:h-32 w-auto mx-auto mb-6 drop-shadow-lg">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">วัดพระธรรมกายเทนเนสซี</h1>
-            <p class="text-xl md:text-2xl font-light mb-2 opacity-90">Dhammakaya Meditation Center Tennessee</p>
-            <p class="text-lg md:text-xl font-light mb-8 opacity-80 italic">"สร้างวัดให้เป็นวัด สร้างพระให้เป็นพระ สร้างคนให้เป็นคนดี"</p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="about.html" class="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white px-8 py-3 rounded-full font-medium transition-all border border-white/30">เกี่ยวกับวัด</a>
-                <a href="pagoda.html" class="bg-accent hover:bg-primary text-white px-8 py-3 rounded-full font-semibold transition-all shadow-lg">ร่วมสร้างเจดีย์</a>
-            </div>
+        <div class="gallery-item">
+          <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/DMC02467_2_52.jpg" alt="Temple Gallery 2">
         </div>
-        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-            <svg class="w-8 h-8 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
-            </svg>
+        <div class="gallery-item">
+          <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKTW0152d_2_176.jpg" alt="Temple Gallery 3">
         </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="py-20 bg-secondary">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-3">แกลเลอรี่</h2>
-                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
-                <p class="text-accent mt-4">บรรยากาศภายในวัดพระธรรมกายเทนเนสซี</p>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-                <div class="gallery-item rounded-2xl overflow-hidden shadow-md col-span-2 md:col-span-1 md:row-span-2 aspect-square md:aspect-auto">
-                    <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/09_2_51.jpg" alt="บรรยากาศวัด" class="w-full h-full object-cover">
-                </div>
-                <div class="gallery-item rounded-2xl overflow-hidden shadow-md aspect-square">
-                    <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/DMC02467_2_52.jpg" alt="บรรยากาศวัด" class="w-full h-full object-cover">
-                </div>
-                <div class="gallery-item rounded-2xl overflow-hidden shadow-md aspect-square">
-                    <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/DMC01588_2_53.jpg" alt="บรรยากาศวัด" class="w-full h-full object-cover">
-                </div>
-                <div class="gallery-item rounded-2xl overflow-hidden shadow-md aspect-square">
-                    <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/DMC01451_2_54.jpg" alt="บรรยากาศวัด" class="w-full h-full object-cover">
-                </div>
-                <div class="gallery-item rounded-2xl overflow-hidden shadow-md aspect-square">
-                    <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/DJI_0293_2_55.jpg" alt="บรรยากาศวัด" class="w-full h-full object-cover">
-                </div>
-            </div>
+        <div class="gallery-item">
+          <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKTW0230d_2_177.jpg" alt="Temple Gallery 4">
         </div>
-    </section>
-
-    <!-- Timeline Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-3">ประวัติวัดพระธรรมกายเทนเนสซี</h2>
-                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
-            </div>
-
-            <div class="relative">
-                <div class="timeline-line hidden md:block"></div>
-
-                <!-- Timeline Item 1 -->
-                <div class="relative flex flex-col md:flex-row items-center mb-16 fade-up">
-                    <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0">
-                        <span class="inline-block bg-primary text-white text-sm font-semibold px-4 py-1 rounded-full mb-3">พ.ศ. 2542 (1999)</span>
-                        <h3 class="text-xl font-bold text-dark mb-2">จุดเริ่มต้น</h3>
-                        <p class="text-dark/70 leading-relaxed">ย้อนกลับไปเมื่อปี พ.ศ. 2542 กลุ่มผู้มีศรัทธาในวิชชาธรรมกายที่รัฐเทนเนสซี ได้รวมตัวกันเพื่อปฏิบัติธรรมและสั่งสมบุญร่วมกัน ในยุคที่รัฐแห่งนี้ยังไม่มีศูนย์สาขาของวัดพระธรรมกาย หมู่คณะจึงเดินทางไปร่วมงานบุญที่วัดพระธรรมกายจอร์เจียเป็นประจำ</p>
-                    </div>
-                    <div class="hidden md:flex w-12 h-12 bg-accent rounded-full items-center justify-center z-10 shadow-lg flex-shrink-0">
-                        <div class="w-4 h-4 bg-white rounded-full"></div>
-                    </div>
-                    <div class="md:w-1/2 md:pl-12">
-                        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/IMG_3075_2_57.jpg" alt="จุดเริ่มต้น" class="rounded-2xl shadow-lg w-full aspect-video object-cover">
-                    </div>
-                </div>
-
-                <!-- Timeline Item 2 -->
-                <div class="relative flex flex-col md:flex-row-reverse items-center mb-16 fade-up">
-                    <div class="md:w-1/2 md:pl-12 mb-6 md:mb-0">
-                        <span class="inline-block bg-accent text-white text-sm font-semibold px-4 py-1 rounded-full mb-3">พ.ศ. 2555 (2012)</span>
-                        <h3 class="text-xl font-bold text-dark mb-2">ก่อตั้งวัด</h3>
-                        <p class="text-dark/70 leading-relaxed">ในที่สุดเมื่อปี พ.ศ. 2555 ก็ได้พบสถานที่ที่เหมาะสม ณ เมือง Murfreesboro รัฐ Tennessee ห่างจากสนามบินและเมืองหลวง Nashville เพียง 30 กว่าไมล์ บนพื้นที่ 5.1 เอเคอร์ ด้วยแรงศรัทธาของหมู่คณะ จึงร่วมแรงร่วมใจกันจัดซื้อที่ดินผืนนี้ และปักหลักสร้างเป็น "วัดพระธรรมกายเทนเนสซี"</p>
-                    </div>
-                    <div class="hidden md:flex w-12 h-12 bg-accent rounded-full items-center justify-center z-10 shadow-lg flex-shrink-0">
-                        <div class="w-4 h-4 bg-white rounded-full"></div>
-                    </div>
-                    <div class="md:w-1/2 md:pr-12">
-                        <div class="grid grid-cols-2 gap-3">
-                            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/_MG_3715_2_58.jpg" alt="ก่อตั้งวัด" class="rounded-xl shadow-md w-full aspect-square object-cover">
-                            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/DMC02841_2_79.jpg" alt="ก่อตั้งวัด" class="rounded-xl shadow-md w-full aspect-square object-cover">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Timeline Item 3 -->
-                <div class="relative flex flex-col md:flex-row items-center fade-up">
-                    <div class="md:w-1/2 md:pr-12 md:text-right mb-6 md:mb-0">
-                        <span class="inline-block bg-primary text-white text-sm font-semibold px-4 py-1 rounded-full mb-3">ปัจจุบัน</span>
-                        <h3 class="text-xl font-bold text-dark mb-2">บุญสถานแห่งการสั่งสมบุญ</h3>
-                        <p class="text-dark/70 leading-relaxed">นับจากวันก่อตั้ง สถานที่แห่งนี้ได้กลายเป็นบุญสถานที่หมู่คณะมาสั่งสมบุญอย่างต่อเนื่อง ไม่ว่าจะเป็นกิจวัตรประจำวัน กิจกรรมประจำสัปดาห์ หรืองานบุญใหญ่ในวันสำคัญทางพระพุทธศาสนา ล้วนดำเนินมาอย่างสม่ำเสมอตราบจนถึงปัจจุบัน</p>
-                    </div>
-                    <div class="hidden md:flex w-12 h-12 bg-accent rounded-full items-center justify-center z-10 shadow-lg flex-shrink-0">
-                        <div class="w-4 h-4 bg-white rounded-full"></div>
-                    </div>
-                    <div class="md:w-1/2 md:pl-12">
-                        <div class="grid grid-cols-2 gap-3">
-                            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/03_2_64.jpg" alt="ปัจจุบัน" class="rounded-xl shadow-md w-full aspect-square object-cover">
-                            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/11_2_65.jpg" alt="ปัจจุบัน" class="rounded-xl shadow-md w-full aspect-square object-cover">
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="gallery-item">
+          <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKTW0318d_2_178.jpg" alt="Temple Gallery 5">
         </div>
-    </section>
-
-    <!-- Pagoda Highlight Section -->
-    <section class="py-20 bg-gradient-to-br from-dark to-accent text-white relative overflow-hidden">
-        <div class="absolute inset-0 opacity-20">
-            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn58_2_82.jpg" alt="" class="w-full h-full object-cover">
+        <div class="gallery-item">
+          <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/DMC02174_2_179.jpg" alt="Temple Gallery 6">
         </div>
-        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="fade-up">
-                    <span class="inline-block bg-white/20 text-white text-sm font-semibold px-4 py-1 rounded-full mb-4 backdrop-blur-sm">โครงการพิเศษ</span>
-                    <h2 class="text-3xl md:text-5xl font-bold mb-4 leading-tight">องค์พระเจดีย์<br><span class="text-primary">องค์แรกในอเมริกา</span></h2>
-                    <p class="text-lg text-white/80 mb-3">เจดีย์ทรงองค์พระ หน้าตัก 5 เมตร สูง 6.85 เมตร</p>
-                    <p class="text-white/70 leading-relaxed mb-8">"องค์พระเจดีย์ เจดีย์ที่เป็นรูปองค์พระนั่งสมาธิ ที่มองด้านไหนก็เป็นองค์พระ เพิ่งเคยเกิดขึ้นครั้งแรกของโลก มองกลางวัน กลางคืน หรือมองด้านไหนก็เป็นองค์พระ"<br><em class="text-sm">— ทบทวนโอวาทในอดีต</em></p>
-                    <a href="pagoda.html" class="inline-block bg-white text-accent hover:bg-primary hover:text-white px-8 py-3 rounded-full font-semibold transition-all shadow-lg">ดูเพิ่มเติม / ร่วมบุญ</a>
-                </div>
-                <div class="grid grid-cols-2 gap-4 fade-up">
-                    <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn39_2_83.jpg" alt="เจดีย์" class="rounded-2xl shadow-xl w-full aspect-square object-cover">
-                    <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn43_2_84.jpg" alt="เจดีย์" class="rounded-2xl shadow-xl w-full aspect-square object-cover mt-8">
-                    <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/58_2_85.jpg" alt="เจดีย์" class="rounded-2xl shadow-xl w-full aspect-square object-cover -mt-8">
-                    <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn58_2_82.jpg" alt="เจดีย์" class="rounded-2xl shadow-xl w-full aspect-square object-cover">
-                </div>
-            </div>
+        <div class="gallery-item">
+          <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/DMC02294_2_180.jpg" alt="Temple Gallery 7">
         </div>
-    </section>
-
-    <!-- Donation Section -->
-    <section id="donate" class="py-20 bg-secondary">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-3">ร่วมทำบุญ</h2>
-                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
-                <p class="text-accent mt-4">ร่วมสร้างบุญกับวัดพระธรรมกายเทนเนสซี</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Thailand Account -->
-                <div class="donation-card rounded-2xl p-8 shadow-lg border border-primary/10 fade-up">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-dark">บัญชีไทย</h3>
-                    </div>
-                    <div class="space-y-3 text-dark/80">
-                        <div class="flex justify-between py-2 border-b border-primary/10">
-                            <span class="font-medium">ธนาคาร</span>
-                            <span>ธนาคารออมสิน</span>
-                        </div>
-                        <div class="flex justify-between py-2 border-b border-primary/10">
-                            <span class="font-medium">ชื่อบัญชี</span>
-                            <span>วัดพระธรรมกายเทนเนสซี</span>
-                        </div>
-                        <div class="flex justify-between py-2 border-b border-primary/10">
-                            <span class="font-medium">เลขบัญชี</span>
-                            <span class="font-bold text-accent text-lg">020-476296-874</span>
-                        </div>
-                    </div>
-                    <div class="mt-6 text-sm text-dark/60">
-                        <p class="font-medium mb-1">สอบถามเพิ่มเติม:</p>
-                        <p>เสา O7 สภาธรรมกายสากล วัดพระธรรมกาย</p>
-                        <p>กัลฯ ศรีสุวรรณ: 06-1539-5272</p>
-                        <p>กัลฯ บรรณารัตน์: 08-9698-7454</p>
-                        <p>Line ID: Phromthep</p>
-                    </div>
-                </div>
-
-                <!-- USA Account -->
-                <div class="donation-card rounded-2xl p-8 shadow-lg border border-primary/10 fade-up">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-dark">USA Account</h3>
-                    </div>
-                    <div class="space-y-3 text-dark/80">
-                        <div class="flex justify-between py-2 border-b border-primary/10">
-                            <span class="font-medium">Check payable to</span>
-                            <span class="font-bold">DMCTN</span>
-                        </div>
-                        <div class="flex justify-between py-2 border-b border-primary/10">
-                            <span class="font-medium">Zelle</span>
-                            <span class="font-bold text-accent">dmctn2023@gmail.com</span>
-                        </div>
-                    </div>
-                    <div class="mt-8 bg-accent/10 rounded-xl p-5 text-center">
-                        <p class="text-accent font-bold text-lg mb-1">ร่วมบุญสร้างเจดีย์</p>
-                        <p class="text-3xl font-bold text-dark">$150 <span class="text-base font-normal text-dark/60">/ กอง</span></p>
-                        <p class="text-sm text-dark/60 mt-1">(5,000 บาท)</p>
-                        <p class="text-xs text-dark/50 mt-2">แผ่นทองจารึกชื่อเจ้าภาพ</p>
-                    </div>
-                    <div class="mt-4 flex items-center justify-center">
-                        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/_2_86.jpg" alt="QR Code ร่วมบุญ" class="h-40 w-auto rounded-lg shadow-sm">
-                    </div>
-                </div>
-            </div>
+        <div class="gallery-item">
+          <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/DMC09317_2_181.jpg" alt="Temple Gallery 8">
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Contact / Location Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-3">ที่ตั้งวัด</h2>
-                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+  <!-- Timeline Section -->
+  <section data-section-id="10" class="bg-gradient-to-b from-white to-yellow-50">
+    <div class="container-custom">
+      <h2 class="section-title">ประวัติวัดพระธรรมกายเทนเนสซี</h2>
+
+      <div class="timeline">
+        <!-- Timeline Item 1 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-year">พ.ศ. 2542 (1999)</div>
+            <div class="timeline-title">จุดเริ่มต้น</div>
+            <div class="timeline-description">
+              ย้อนกลับไปเมื่อปี พ.ศ. 2542 กลุ่มผู้มีศรัทธาในวิชชาธรรมกายที่รัฐเทนเนสซี ได้รวมตัวกันเพื่อปฏิบัติธรรมและสั่งสมบุญร่วมกัน ในยุคที่รัฐแห่งนี้ยังไม่มีศูนย์สาขาของวัดพระธรรมกาย หมู่คณะจึงเดินทางไปร่วมงานบุญที่วัดพระธรรมกายจอร์เจียเป็นประจำ
+              <br><br>
+              เมื่อหมู่คณะเติบโตขึ้น จึงเริ่มจัดกิจกรรมงานบุญที่บ้าน โดยนิมนต์พระอาจารย์จากจอร์เจีย พร้อมกับแสวงหาสถานที่ที่จะสร้างเป็นวัดขึ้นในรัฐเทนเนสซี
             </div>
-            <div class="grid md:grid-cols-2 gap-12 items-center fade-up">
-                <div>
-                    <div class="bg-secondary rounded-2xl p-8">
-                        <h3 class="text-xl font-bold text-dark mb-4">วัดพระธรรมกายเทนเนสซี</h3>
-                        <p class="text-dark/70 mb-2">Dhammakaya Meditation Center Tennessee</p>
-                        <p class="text-dark/80 font-medium text-lg mb-4">2033 Ghee Rd<br>Murfreesboro, TN 37127</p>
-                        <p class="text-dark/60 text-sm mb-6">เมือง Murfreesboro, รัฐ Tennessee, สหรัฐอเมริกา<br>ห่างจากสนามบิน Nashville International Airport เพียง 30 กว่าไมล์</p>
-                        <div class="flex flex-wrap gap-3">
-                            <a href="https://maps.app.goo.gl/nVp6mGzz4vCvfZ4s7" target="_blank" class="inline-flex items-center gap-2 bg-accent text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-primary transition-all">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                                Google Maps
-                            </a>
-                            <a href="https://www.facebook.com/072dmctn" target="_blank" class="inline-flex items-center gap-2 bg-dark/10 text-dark px-5 py-2 rounded-full text-sm font-medium hover:bg-dark/20 transition-all">Facebook</a>
-                            <a href="https://www.youtube.com/@DMCTN072" target="_blank" class="inline-flex items-center gap-2 bg-dark/10 text-dark px-5 py-2 rounded-full text-sm font-medium hover:bg-dark/20 transition-all">YouTube</a>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.0!2d-86.39!3d35.84!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDUwJzI0LjAiTiA4NsKwMjMnMjQuMCJX!5e0!3m2!1sth!2sus!4v1" width="100%" height="350" style="border:0; border-radius: 16px;" allowfullscreen="" loading="lazy" class="shadow-lg"></iframe>
-                </div>
+            <div class="timeline-images">
+              <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/IMG_3075_2_57.jpg" alt="Origin 1" class="timeline-image">
             </div>
+          </div>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white/70 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-3 gap-8 items-center">
-                <div class="flex items-center gap-3">
-                    <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/LOGO_2_3.png" alt="Logo" class="h-12 w-auto opacity-80">
-                    <div>
-                        <p class="text-white font-semibold">วัดพระธรรมกายเทนเนสซี</p>
-                        <p class="text-xs">Dhammakaya Meditation Center TN</p>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <div class="flex justify-center gap-6">
-                        <a href="index.html" class="hover:text-primary transition-colors">หน้าแรก</a>
-                        <a href="about.html" class="hover:text-primary transition-colors">เกี่ยวกับวัด</a>
-                        <a href="pagoda.html" class="hover:text-primary transition-colors">สถาปนาเจดีย์</a>
-                    </div>
-                </div>
-                <div class="text-right text-sm">
-                    <p>2033 Ghee Rd, Murfreesboro, TN 37127</p>
-                    <p class="mt-1">Line ID: Phromthep</p>
-                </div>
+        <!-- Timeline Item 2 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-year">พ.ศ. 2555 (2012)</div>
+            <div class="timeline-title">ก่อตั้งวัด</div>
+            <div class="timeline-description">
+              ในที่สุดเมื่อปี พ.ศ. 2555 ก็ได้พบสถานที่ที่เหมาะสม ณ เมือง Murfreesboro รัฐ Tennessee ห่างจากสนามบินและเมืองหลวง Nashville เพียง 30 กว่าไมล์ บนพื้นที่ 5.1 เอเคอร์ (ประมาณ 12 ไร่) พร้อมอาคาร 1 หลัง
+              <br><br>
+              ด้วยแรงศรัทธาของหมู่คณะ จึงร่วมแรงร่วมใจกันจัดซื้อที่ดินผืนนี้ และปักหลักสร้างเป็นศูนย์สาขาของวัดพระธรรมกาย ตั้งชื่อว่า "วัดพระธรรมกายเทนเนสซี" เมื่อวันที่ 23 มกราคม พ.ศ. 2555 และในวันที่ 31 มีนาคมปีเดียวกัน ก็ได้มีตัวแทนหมู่คณะเดินทางมาอยู่ประจำเป็นครั้งแรก
             </div>
-            <div class="border-t border-white/10 mt-8 pt-8 text-center text-sm">
-                <p>&copy; 2026 วัดพระธรรมกายเทนเนสซี — Dhammakaya Meditation Center Tennessee</p>
+            <div class="timeline-images">
+              <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/_MG_3715_2_58.jpg" alt="Established 1" class="timeline-image">
+              <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/_MG_1129_2_60.jpg" alt="Established 2" class="timeline-image">
+              <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/DMC02848_2_62.jpg" alt="Established 3" class="timeline-image">
+              <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/_MG_9265_2_69.jpg" alt="Established 4" class="timeline-image">
+              <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/_MG_5332_2_70.jpg" alt="Established 5" class="timeline-image">
+              <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/_MG_4649_2_71.jpg" alt="Established 6" class="timeline-image">
+              <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/_MG_4672_2_72.jpg" alt="Established 7" class="timeline-image">
+              <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/DMC02841_2_79.jpg" alt="Established 8" class="timeline-image">
+              <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/_MG_3863_2_80.jpg" alt="Established 9" class="timeline-image">
+              <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/_MG_8126_2_81.jpg" alt="Established 10" class="timeline-image">
             </div>
+          </div>
         </div>
-    </footer>
 
-    <script>
-        // Scroll animation
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-    </script>
+        <!-- Timeline Item 3 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-year">ปัจจุบัน</div>
+            <div class="timeline-title">บุญสถานแห่งการสั่งสมบุญ</div>
+            <div class="timeline-description">
+              นับจากวันก่อตั้ง สถานที่แห่งนี้ได้กลายเป็นบุญสถานที่หมู่คณะมาสั่งสมบุญอย่างต่อเนื่อง ไม่ว่าจะเป็นกิจวัตรประจำวัน กิจกรรมประจำสัปดาห์ หรืองานบุญใหญ่ในวันสำคัญทางพระพุทธศาสนา ล้วนดำเนินมาอย่างสม่ำเสมอตราบจนถึงปัจจุบัน
+              <br><br>
+              เมื่อหมู่คณะเติบโตขึ้นเรื่อยๆ ห้องปฏิบัติธรรมเดิมจึงเริ่มคับแคบ วัดจึงได้สร้างอาคารเอนกประสงค์เพิ่มเติม สำหรับรองรับกิจกรรมขนาดใหญ่ อาทิ พิธีเวียนเทียน งานสงกรานต์ และกิจกรรมพิเศษต่างๆ
+            </div>
+            <div class="timeline-images">
+              <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/03_2_64.jpg" alt="Present 1" class="timeline-image">
+              <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/11_2_65.jpg" alt="Present 2" class="timeline-image">
+              <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/16_2_66.jpg" alt="Present 3" class="timeline-image">
+              <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/04_2_67.jpg" alt="Present 4" class="timeline-image">
+              <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/02_2_68.jpg" alt="Present 5" class="timeline-image">
+              <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKHA1113d_2_73.jpg" alt="Present 6" class="timeline-image">
+              <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKTW0230d_2_74.jpg" alt="Present 7" class="timeline-image">
+              <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKTW0174d_2_75.jpg" alt="Present 8" class="timeline-image">
+              <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKTW0257d_2_76.jpg" alt="Present 9" class="timeline-image">
+              <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/CKTW0308d_2_77.jpg" alt="Present 10" class="timeline-image">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section Images Gallery -->
+      <div class="mt-16">
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/01_2_41.jpg" alt="History 1">
+          </div>
+          <div class="gallery-item">
+            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/DMC02841_2_42.jpg" alt="History 2">
+          </div>
+          <div class="gallery-item">
+            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/_MG_1129_2_43.jpg" alt="History 3">
+          </div>
+          <div class="gallery-item">
+            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/_MG_3756_2_44.jpg" alt="History 4">
+          </div>
+          <div class="gallery-item">
+            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/_MG_4649_2_45.jpg" alt="History 5">
+          </div>
+          <div class="gallery-item">
+            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/_2_46.jpg" alt="History 6">
+          </div>
+          <div class="gallery-item">
+            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/DMC01588_2_47.jpg" alt="History 7">
+          </div>
+          <div class="gallery-item">
+            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/_MG_3863_2_59.jpg" alt="History 8">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pagoda Section -->
+  <section data-section-id="18" class="bg-gradient-to-b from-yellow-50 to-white">
+    <div class="container-custom">
+      <div class="pagoda-card">
+        <div class="pagoda-content">
+          <h2 class="pagoda-title-card">โครงการเจดีย์ องค์แรกในอเมริกา</h2>
+          <p class="pagoda-description">
+            องค์พระเจดีย์ เจดีย์ที่เป็นรูปองค์พระนั่งสมาธิ ที่มองด้านไหนก็เป็นองค์พระ เพิ่งเคยเกิดขึ้นครั้งแรกของโลก มองกลางวัน กลางคืน หรือมองด้านไหนก็เป็นองค์พระ
+          </p>
+
+          <div class="pagoda-images">
+            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn58_2_82.jpg" alt="Pagoda 1" class="pagoda-image">
+            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn39_2_83.jpg" alt="Pagoda 2" class="pagoda-image">
+            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn43_2_84.jpg" alt="Pagoda 3" class="pagoda-image">
+            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/58_2_85.jpg" alt="Pagoda 4" class="pagoda-image">
+          </div>
+
+          <a href="pagoda.html" class="btn-pagoda">ดูเพิ่มเติม / ร่วมบุญ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Donation Section -->
+  <section data-section-id="24" class="bg-white">
+    <div class="container-custom">
+      <h2 class="section-title">ร่วมทำบุญ</h2>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+        <!-- Thai Bank -->
+        <div class="donation-card">
+          <div class="donation-label">ธนาคาร</div>
+          <div class="donation-value">ธนาคารออมสิน</div>
+          <div class="donation-label">ชื่อบัญชี</div>
+          <div class="donation-value">วัดพระธรรมกายเทนเนสซี</div>
+          <div class="donation-label">เลขบัญชี</div>
+          <div class="donation-value">020476296874</div>
+        </div>
+
+        <!-- QR Code -->
+        <div class="qr-container">
+          <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/_2_86.jpg" alt="QR Code" class="qr-image">
+        </div>
+
+        <!-- USA Bank -->
+        <div class="donation-card">
+          <div class="donation-label">USA บัญชี</div>
+          <div class="donation-value">DMCTN</div>
+          <div class="donation-label">ชื่อเต็ม</div>
+          <div class="donation-value">Dhammakaya Meditation Center Tennessee</div>
+          <div class="donation-label">Zelle</div>
+          <div class="donation-value">dmctn2023@gmail.com</div>
+        </div>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="donation-card">
+        <div class="donation-label">สอบถามข้อมูลเพิ่มเติม</div>
+        <div class="donation-note">สอบถามข้อมูลเพิ่มเติมและร่วมบุญได้ที่:
+เสา O7 สภาธรรมกายสากล วัดพระธรรมกาย
+กัลฯ ศรีสุวรรณ: 06-1539-5272
+กัลฯ บรรณารัตน์: 08-9698-7454
+Line ID: Phromthep</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section data-section-id="21" class="bg-gradient-to-b from-white to-yellow-50">
+    <div class="container-custom">
+      <h2 class="section-title">ที่ตั้งวัด</h2>
+
+      <div class="contact-card">
+        <div class="contact-info">
+          <div class="contact-label">ชื่อวัด (ไทย)</div>
+          <div class="contact-value">วัดพระธรรมกายเทนเนสซี</div>
+        </div>
+
+        <div class="contact-info">
+          <div class="contact-label">ชื่อวัด (อังกฤษ)</div>
+          <div class="contact-value">Dhammakaya Meditation Center Tennessee</div>
+        </div>
+
+        <div class="contact-info">
+          <div class="contact-label">ที่อยู่</div>
+          <div class="contact-value">2033 Ghee Rd<br>Murfreesboro, TN 37127<br>สหรัฐอเมริกา</div>
+        </div>
+
+        <div class="contact-info">
+          <div class="contact-label">ระยะห่าง</div>
+          <div class="contact-value">เมือง Murfreesboro, รัฐ Tennessee, สหรัฐอเมริกา<br>ห่างจากสนามบิน Nashville International Airport เพียง 30 กว่าไมล์</div>
+        </div>
+
+        <div class="contact-info">
+          <div class="contact-label">โทรศัพท์</div>
+          <div class="contact-value"><a href="tel:+16157521292" class="text-blue-600 hover:underline">+1 615-752-1292</a></div>
+        </div>
+
+        <div class="contact-info">
+          <div class="contact-label">อีเมล</div>
+          <div class="contact-value"><a href="mailto:tennessee@gmail.com" class="text-blue-600 hover:underline">tennessee@gmail.com</a></div>
+        </div>
+
+        <div class="contact-info">
+          <div class="contact-label">Line ID</div>
+          <div class="contact-value">phromthep</div>
+        </div>
+
+        <div class="maps-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d202.23862436079995!2d-86.32856172557169!3d35.8044013730278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8863fec37aad1d0f%3A0xedbdc99f5747b850!2z4Lin4Lix4LiU4Lie4Lij4Liw4LiY4Lij4Lij4Lih4LiB4Liy4Lii4LmA4LiX4LiZ4LmA4LiZ4Liq4LiL4Li1!5e0!3m2!1sth!2sth!4v1774715939552!5m2!1sth!2sth" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container-custom">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- About -->
+        <div class="footer-section">
+          <div class="footer-title">เกี่ยวกับวัด</div>
+          <p class="text-sm text-gray-200 mb-4">วัดพระธรรมกายเทนเนสซี เป็นศูนย์สาขาของวัดพระธรรมกายอย่างเป็นทางการ ตั้งอยู่ในรัฐเทนเนสซี สหรัฐอเมริกา</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section">
+          <div class="footer-title">ลิงก์ด่วน</div>
+          <a href="#" class="footer-link">หน้าแรก</a>
+          <a href="about.html" class="footer-link">เกี่ยวกับวัด</a>
+          <a href="pagoda.html" class="footer-link">สถาปนาเจดีย์</a>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-section">
+          <div class="footer-title">ติดต่อเรา</div>
+          <a href="tel:+16157521292" class="footer-link">+1 615-752-1292</a>
+          <a href="mailto:tennessee@gmail.com" class="footer-link">tennessee@gmail.com</a>
+          <span class="footer-link">Line ID: phromthep</span>
+        </div>
+
+        <!-- Social -->
+        <div class="footer-section">
+          <div class="footer-title">ติดตามเรา</div>
+          <div class="social-links">
+            <a href="https://www.facebook.com/072dmctn" target="_blank" rel="noopener noreferrer" class="social-icon" title="Facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <a href="https://www.youtube.com/@DMCTN072" target="_blank" rel="noopener noreferrer" class="social-icon" title="YouTube">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+            </a>
+            <a href="https://maps.app.goo.gl/ZqoQaPaNNenPTq9AA" target="_blank" rel="noopener noreferrer" class="social-icon" title="Google Maps">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C7.31 0 3.26 3.05 2.21 7.12H2.2C0.88 8.32 0 10.02 0 12c0 4.42 3.58 8 8 8 2.96 0 5.5-1.61 6.88-4h5.12c1.1 0 2-0.9 2-2v-4c0-1.1-0.9-2-2-2h-5.12c-1.38-2.39-3.92-4-6.88-4zm0 14c-1.1 0-2-0.9-2-2s0.9-2 2-2 2 0.9 2 2-0.9 2-2 2z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 วัดพระธรรมกายเทนเนสซี | Dhammakaya Meditation Center Tennessee</p>
+        <p class="mt-2">All rights reserved. ศูนย์ปฏิบัติธรรมแห่งสันติภาพ</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
