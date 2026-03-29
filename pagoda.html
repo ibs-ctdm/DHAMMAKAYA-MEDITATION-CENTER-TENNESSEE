@@ -1,554 +1,267 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="องค์แรกในอเมริกา — ร่วมสร้างประวัติศาสตร์พระพุทธศาสนา">
-    <meta name="theme-color" content="#4682B4">
-    <meta property="og:title" content="วัดพระธรรมกายเทนเนสซี — สถาปนาเจดีย์">
-    <meta property="og:description" content="องค์แรกในอเมริกา — ร่วมสร้างประวัติศาสตร์พระพุทธศาสนา">
-    <meta property="og:image" content="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn39_2_187.jpg">
-    <link rel="icon" type="image/png" href="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/logo-tennesse_2_186.png">
-    
-    <title>วัดพระธรรมกายเทนเนสซี — สถาปนาเจดีย์</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        * {
-            font-family: 'Sarabun', sans-serif;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>วัดพระธรรมกายเทนเนสซี — สถาปนาเจดีย์</title>
+  <meta name="description" content="โครงการสถาปนาองค์พระเจดีย์ องค์แรกในอเมริกา" />
+  <link rel="icon" type="image/png" href="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/logo-tennesse_2_186.png" />
+  <link rel="apple-touch-icon" href="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/logo-tennesse_2_186.png" />
+  <meta property="og:title" content="วัดพระธรรมกายเทนเนสซี — สถาปนาเจดีย์" />
+  <meta property="og:description" content="พระเจดีย์องค์แรกในอเมริกา — ร่วมสร้างประวัติศาสตร์พระพุทธศาสนา" />
+  <meta property="og:image" content="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn39_2_187.jpg" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="วัดพระธรรมกายเทนเนสซี — สถาปนาเจดีย์" />
+  <meta name="twitter:description" content="พระเจดีย์องค์แรกในอเมริกา — ร่วมสร้างประวัติศาสตร์พระพุทธศาสนา" />
+  <meta name="twitter:image" content="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn39_2_187.jpg" />
+  <meta name="theme-color" content="#2c6b9b" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: '#2c6b9b', secondary: '#f5faff', accent: '#d1a71f', dark: '#0f326b' },
+          fontFamily: { sarabun: ['Sarabun', 'sans-serif'] }
         }
-        
-        body {
-            background: linear-gradient(135deg, #f0f8ff 0%, #ffffff 100%);
-        }
-        
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-        
-        .gradient-overlay {
-            background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(47,79,79,0.4) 50%, rgba(47,79,79,0.8) 100%);
-        }
-        
-        .gold-accent {
-            color: #FFA500;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, #4682B4 0%, #36648B 100%);
-            color: white;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(70, 130, 180, 0.3);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(70, 130, 180, 0.4);
-        }
-        
-        .btn-accent {
-            background: linear-gradient(135deg, #FFA500 0%, #FF8C00 100%);
-            color: white;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 165, 0, 0.3);
-        }
-        
-        .btn-accent:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 165, 0, 0.4);
-        }
-        
-        .hero-section {
-            height: 100vh;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-        }
-        
-        .navbar {
-            background: rgba(70, 130, 180, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .masonry-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        .masonry-item {
-            overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .masonry-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-        
-        .masonry-item img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-        }
-        
-        .section-title {
-            position: relative;
-            display: inline-block;
-            padding-bottom: 0.5rem;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60%;
-            height: 4px;
-            background: linear-gradient(90deg, #FFA500, transparent);
-            border-radius: 2px;
-        }
-        
-        .anisong-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .anisong-list li {
-            padding: 1rem;
-            margin-bottom: 0.75rem;
-            background: linear-gradient(135deg, #F0F8FF 0%, rgba(70, 130, 180, 0.1) 100%);
-            border-left: 4px solid #FFA500;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-        
-        .anisong-list li:hover {
-            background: linear-gradient(135deg, #E0F0FF 0%, rgba(70, 130, 180, 0.15) 100%);
-            transform: translateX(4px);
-        }
-        
-        .blockquote-elegant {
-            border-left: 6px solid #FFA500;
-            padding-left: 1.5rem;
-            margin: 2rem 0;
-            font-style: italic;
-            color: #2F4F4F;
-            background: rgba(255, 165, 0, 0.05);
-            padding: 1.5rem;
-            border-radius: 4px;
-        }
-        
-        .donation-card {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(240, 248, 255, 0.9) 100%);
-            border: 2px solid #4682B4;
-            border-radius: 12px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-        }
-        
-        .donation-card:hover {
-            box-shadow: 0 8px 25px rgba(70, 130, 180, 0.2);
-            transform: translateY(-5px);
-        }
-        
-        .donation-images {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .qr-image {
-            background: white;
-            border-radius: 8px;
-            padding: 1rem;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .qr-image img {
-            width: 100%;
-            height: auto;
-        }
-        
-        footer {
-            background: linear-gradient(135deg, #2F4F4F 0%, #4682B4 100%);
-            color: white;
-        }
-        
-        .footer-link {
-            color: #F0F8FF;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-link:hover {
-            color: #FFA500;
-        }
-    </style>
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Sarabun', sans-serif; }
+    .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .gold-border { border: 2px solid #d1a71f; }
+    .img-hover img { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .img-hover img:hover { transform: scale(1.03); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+  </style>
 </head>
-<body>
-    <!-- Navbar -->
-    <nav class="navbar fixed top-0 w-full z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <!-- Logo -->
-                <div class="flex-shrink-0">
-                    <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/logo-tennesse_2_186.png" 
-                         alt="DMCTN Logo" class="h-12 w-auto">
-                </div>
-                
-                <!-- Navigation Links -->
-                <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-white hover:text-yellow-300 transition duration-300">หน้าแรก</a>
-                    <a href="about.html" class="text-white hover:text-yellow-300 transition duration-300">เกี่ยวกับวัด</a>
-                    <a href="pagoda.html" class="text-yellow-300 border-b-2 border-yellow-300">สถาปนาเจดีย์</a>
-                </div>
-                
-                <!-- Contact Info -->
-                <div class="hidden lg:flex items-center space-x-4 text-white text-sm">
-                    <a href="tel:+16157521292" class="hover:text-yellow-300 transition duration-300">+1 615-752-1292</a>
-                </div>
-            </div>
+<body class="bg-secondary text-dark font-sarabun">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/logo-tennesse_2_186.png" alt="Logo" class="h-10 w-10 object-contain" />
+        <span class="text-lg font-bold text-dark hidden sm:block">วัดพระธรรมกายเทนเนสซี</span>
+      </a>
+      <div class="flex items-center gap-6 text-sm font-medium">
+        <a href="index.html" class="text-dark/70 hover:text-primary transition">หน้าแรก</a>
+        <a href="about.html" class="text-dark/70 hover:text-primary transition">เกี่ยวกับวัด</a>
+        <a href="pagoda.html" class="text-primary font-bold border-b-2 border-accent pb-1">สถาปนาเจดีย์</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="relative w-full h-screen overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn39_2_187.jpg')"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent"></div>
+    <div class="relative z-10 h-full flex flex-col justify-end pb-20 px-6 md:px-16 max-w-7xl mx-auto">
+      <h1 class="text-4xl md:text-6xl font-bold text-white drop-shadow-lg mb-4">โครงการสถาปนาองค์พระเจดีย์</h1>
+      <p class="text-xl md:text-2xl text-white/90 drop-shadow-md max-w-2xl">พระเจดีย์องค์แรกในอเมริกา — ร่วมสร้างประวัติศาสตร์พระพุทธศาสนา</p>
+    </div>
+  </section>
+
+  <!-- โครงการสถาปนาองค์พระเจดีย์ -->
+  <section data-section-id="14" class="py-16 md:py-24 bg-gradient-to-b from-secondary to-white">
+    <div class="max-w-7xl mx-auto px-4">
+
+      <div class="text-center mb-16 fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold text-dark">โครงการสถาปนาองค์พระเจดีย์เพื่อสร้างสันติภาพโลก</h2>
+        <div class="w-20 h-1 bg-accent mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <!-- Gallery -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-16 img-hover fade-in">
+        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn46_2_145.jpg" alt="" class="w-full h-48 object-cover rounded-xl" />
+        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn41_2_146.jpg" alt="" class="w-full h-48 object-cover rounded-xl" />
+        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn38_2_147.jpg" alt="" class="w-full h-48 object-cover rounded-xl" />
+        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn42_2_148.jpg" alt="" class="w-full h-48 object-cover rounded-xl" />
+        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn43_2_149.jpg" alt="" class="w-full h-48 object-cover rounded-xl" />
+        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/58_2_150.jpg" alt="" class="w-full h-48 object-cover rounded-xl" />
+        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/61_2_151.jpg" alt="" class="w-full h-48 object-cover rounded-xl" />
+        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/65_2_152.jpg" alt="" class="w-full h-48 object-cover rounded-xl" />
+        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/59_2_153.jpg" alt="" class="w-full h-48 object-cover rounded-xl" />
+        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn58_2_154.jpg" alt="" class="w-full h-48 object-cover rounded-xl" />
+        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn59_2_155.jpg" alt="" class="w-full h-48 object-cover rounded-xl" />
+        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/DMC03511_2_205.jpg" alt="" class="w-full h-48 object-cover rounded-xl" />
+        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn58_2_156.jpg" alt="" class="w-full h-48 object-cover rounded-xl" />
+        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn62_2_157.jpg" alt="" class="w-full h-48 object-cover rounded-xl" />
+        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/_2_206.jpg" alt="" class="w-full h-48 object-cover rounded-xl" />
+        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn61_2_158.jpg" alt="" class="w-full h-48 object-cover rounded-xl" />
+      </div>
+
+      <!-- Specs -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 fade-in">
+        <div class="bg-white rounded-2xl shadow-lg p-8 text-center gold-border">
+          <p class="text-5xl font-bold text-accent mb-2">5</p>
+          <p class="text-lg text-dark/70">เมตร หน้าตัก</p>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero-section" style="background-image: url('https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn39_2_187.jpg')">
-        <div class="gradient-overlay w-full h-full absolute top-0 left-0"></div>
-        
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 md:pb-24">
-            <div class="text-white text-center md:text-right">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-lg">
-                    โครงการสถาปนาองค์พระเจดีย์
-                </h1>
-                <p class="text-xl md:text-2xl font-light drop-shadow-lg">
-                    องค์แรกในอเมริกา — ร่วมสร้างประวัติศาสตร์พระพุทธศาสนา
-                </p>
-            </div>
+        <div class="bg-white rounded-2xl shadow-lg p-8 text-center gold-border">
+          <p class="text-5xl font-bold text-accent mb-2">6.85</p>
+          <p class="text-lg text-dark/70">เมตร ความสูง</p>
         </div>
-    </section>
-
-    <!-- Section 0: Pagoda Project -->
-    <section data-section-id="14" class="py-16 md:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Section Title -->
-            <div class="mb-12 md:mb-16">
-                <h2 class="section-title text-3xl md:text-4xl font-bold text-gray-900">
-                    โครงการสถาปนาองค์พระเจดีย์ องค์แรกในอเมริกา
-                </h2>
-            </div>
-
-            <!-- Image Gallery - Masonry Grid -->
-            <div class="mb-16">
-                <div class="masonry-grid">
-                    <div class="masonry-item">
-                        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn46_2_145.jpg" 
-                             alt="Pagoda design 1">
-                    </div>
-                    <div class="masonry-item">
-                        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn41_2_146.jpg" 
-                             alt="Pagoda design 2">
-                    </div>
-                    <div class="masonry-item">
-                        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn38_2_147.jpg" 
-                             alt="Pagoda design 3">
-                    </div>
-                    <div class="masonry-item">
-                        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn42_2_148.jpg" 
-                             alt="Pagoda design 4">
-                    </div>
-                    <div class="masonry-item">
-                        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn43_2_149.jpg" 
-                             alt="Pagoda design 5">
-                    </div>
-                    <div class="masonry-item">
-                        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/58_2_150.jpg" 
-                             alt="Pagoda design 6">
-                    </div>
-                    <div class="masonry-item">
-                        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/61_2_151.jpg" 
-                             alt="Pagoda design 7">
-                    </div>
-                    <div class="masonry-item">
-                        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/65_2_152.jpg" 
-                             alt="Pagoda design 8">
-                    </div>
-                    <div class="masonry-item">
-                        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/59_2_153.jpg" 
-                             alt="Pagoda design 9">
-                    </div>
-                    <div class="masonry-item">
-                        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn58_2_154.jpg" 
-                             alt="Pagoda design 10">
-                    </div>
-                    <div class="masonry-item">
-                        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn59_2_155.jpg" 
-                             alt="Pagoda design 11">
-                    </div>
-                    <div class="masonry-item">
-                        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn58_2_156.jpg" 
-                             alt="Pagoda design 12">
-                    </div>
-                    <div class="masonry-item">
-                        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn62_2_157.jpg" 
-                             alt="Pagoda design 13">
-                    </div>
-                    <div class="masonry-item">
-                        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/tn61_2_158.jpg" 
-                             alt="Pagoda design 14">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Goal Section -->
-            <div class="mb-16 glass-effect p-8 rounded-lg">
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">วัตถุประสงค์โครงการ</h3>
-                <p class="text-gray-700 leading-relaxed text-lg mb-4">
-                    การสร้างองค์พระเจดีย์ในต่างแดน คือการประดิษฐานพระพุทธศาสนาวิชชาธรรมกายให้มั่นคงบนแผ่นดินอเมริกา เป็นประภาคารทางธรรมที่ส่องสว่างให้ผู้คนได้เข้าถึงสันติสุขภายใน สืบต่ออายุพระศาสนาให้ยืนยาว
-                </p>
-                <p class="text-gray-700 leading-relaxed text-lg">
-                    นับเป็นความเมตตาอย่างสูงของหลวงพ่อ โดยมีหลวงพ่อทัตตชีโวเป็นตัวแทนอธิษฐานจิต ปิดแผ่นทองดวงแก้วบรมจักรพรรดิ เพื่อมอบแก่ท่านเจ้าภาพนำไปอธิษฐานจิตที่บ้าน และจะนำมาประดิษฐานภายในองค์พระเจดีย์เมื่อสร้างสำเร็จ
-                </p>
-            </div>
-
-            <!-- Details Section -->
-            <div class="mb-16">
-                <h3 class="text-2xl font-bold text-gray-900 mb-6">รายละเอียดองค์พระเจดีย์</h3>
-                <div class="glass-effect p-8 rounded-lg mb-8">
-                    <p class="text-gray-700 leading-relaxed text-lg">
-                        เจดีย์ทรงองค์พระ หน้าตัก 5 เมตร สูง 6.85 เมตร มองจากด้านไหนก็เห็นเป็นองค์พระนั่งสมาธิ ภายในเป็นที่ประดิษฐานขององค์พระธรรมกายประจำตัว ดวงแก้ว และแผ่นทองจารึกรายนามเจ้าภาพ
-                    </p>
-                </div>
-
-                <h4 class="text-xl font-bold text-gray-900 mb-6 gold-accent">อานิสงส์แห่งการสร้างองค์พระเจดีย์</h4>
-                <p class="text-gray-700 mb-6 text-lg">
-                    ผู้มีส่วนร่วมในการสถาปนาองค์พระเจดีย์ ย่อมได้รับอานิสงส์อันประมาณมิได้:
-                </p>
-                <ul class="anisong-list mb-8">
-                    <li><span class="font-semibold">ถึงพร้อมด้วยร่างกายที่แข็งแรง สมส่วน สวยงาม ผิวพรรณงาม</span></li>
-                    <li><span class="font-semibold">ถึงพร้อมด้วยที่สุดแห่งสมบัติ คือ รูปสมบัติ ทรัพย์สมบัติ คุณสมบัติ</span></li>
-                    <li><span class="font-semibold">ถึงพร้อมด้วยปัญญาเฉลียวฉลาด ในศาสตร์ทั้งปวง</span></li>
-                    <li><span class="font-semibold">เมื่อละโลกไป ย่อมเข้าถึงสุคติโลกสวรรค์</span></li>
-                    <li><span class="font-semibold">เป็นเหตุปัจจัยในการบรรลุธรรม ทั้งในชาตินี้และชาติต่อๆ ไป</span></li>
-                </ul>
-            </div>
-
-            <!-- Blockquote -->
-            <div class="blockquote-elegant">
-                <p class="text-lg">
-                    "องค์พระเจดีย์ เจดีย์ที่เป็นรูปองค์พระนั่งสมาธิ ที่มองด้านไหนก็เป็นองค์พระ เพิ่งเคยเกิดขึ้นครั้งแรกของโลก มองกลางวัน กลางคืน หรือมองด้านไหนก็เป็นองค์พระ" 
-                </p>
-                <p class="text-right text-sm mt-4">— ทบทวนโอวาทในอดีต</p>
-            </div>
-
-            <!-- How to Join / CTA Section -->
-            <div class="mt-16 glass-effect p-8 md:p-12 rounded-lg border-2 border-yellow-400">
-                <div class="text-center md:text-left">
-                    <h3 class="text-3xl font-bold text-gray-900 mb-4">ขอเรียนเชิญท่านผู้มีบุญ</h3>
-                    <p class="text-xl text-gray-700 mb-6 leading-relaxed">
-                        ขอเรียนเชิญผู้มีบุญทั่วโลก มาร่วมกันสถาปนาองค์พระเจดีย์ องค์แรกในอเมริกา น้อมบูชาธรรมหลวงพ่อธัมมชโย
-                    </p>
-                    
-                    <div class="bg-gradient-to-r from-yellow-100 to-orange-100 p-6 rounded-lg mb-8 border-2 border-yellow-400">
-                        <p class="text-gray-900 text-lg font-semibold mb-2">ร่วมบุญแผ่นทองจารึกชื่อเจ้าภาพ</p>
-                        <p class="text-3xl font-bold gold-accent">1 กอง = $150 (5,000 บาท)</p>
-                    </div>
-                    
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                        <a href="#donation" class="btn-accent px-8 py-4 rounded-lg font-bold text-lg inline-block text-center">
-                            ร่วมบุญสร้างเจดีย์
-                        </a>
-                        <a href="tel:+16157521292" class="btn-primary px-8 py-4 rounded-lg font-bold text-lg inline-block text-center">
-                            ติดต่อสอบถาม
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <div class="bg-white rounded-2xl shadow-lg p-8 text-center gold-border">
+          <p class="text-5xl font-bold text-accent mb-2">องค์แรก</p>
+          <p class="text-lg text-dark/70">ในอเมริกา</p>
         </div>
-    </section>
+      </div>
 
-    <!-- Section 1: Donation Section -->
-    <section id="donation" data-section-id="22" class="py-16 md:py-24 bg-gradient-to-b from-white to-blue-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Section Title -->
-            <div class="mb-12 md:mb-16">
-                <h2 class="section-title text-3xl md:text-4xl font-bold text-gray-900">
-                    ร่วมบุญสร้างเจดีย์
-                </h2>
-            </div>
+      <!-- Goal -->
+      <div class="bg-gradient-to-br from-primary/5 to-accent/5 rounded-3xl p-8 md:p-12 mb-16 fade-in">
+        <h3 class="text-2xl font-bold text-dark mb-4">เป้าหมายของโครงการ</h3>
+        <p class="text-dark/80 leading-relaxed text-lg mb-4">การสร้างองค์พระเจดีย์ในต่างแดน คือการประดิษฐานพระพุทธศาสนาวิชชาธรรมกายให้มั่นคงบนแผ่นดินอเมริกา เป็นประภาคารทางธรรมที่ส่องสว่างให้ผู้คนได้เข้าถึงสันติสุขภายใน สืบต่ออายุพระศาสนาให้ยืนยาว</p>
+        <p class="text-dark/80 leading-relaxed text-lg">นับเป็นความเมตตาอย่างสูงของหลวงพ่อ โดยมีหลวงพ่อทัตตชีโวเป็นตัวแทนอธิษฐานจิต ปิดแผ่นทองดวงแก้วบรมจักรพรรดิ เพื่อมอบแก่ท่านเจ้าภาพนำไปอธิษฐานจิตที่บ้าน และจะนำมาประดิษฐานภายในองค์พระเจดีย์เมื่อสร้างสำเร็จ</p>
+      </div>
 
-            <!-- Donation Info -->
-            <div class="grid md:grid-cols-2 gap-8 mb-12">
-                <!-- Thai Bank Information -->
-                <div class="donation-card">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-6">ธนาคารไทย</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <p class="text-sm text-gray-600">ชื่อธนาคาร</p>
-                            <p class="text-lg font-semibold text-gray-900">ธนาคารออมสิน</p>
-                        </div>
-                        <div>
-                            <p class="text-sm text-gray-600">ชื่อบัญชี</p>
-                            <p class="text-lg font-semibold text-gray-900">วัดพระธรรมกายเทนเนสซี</p>
-                        </div>
-                        <div>
-                            <p class="text-sm text-gray-600">เลขบัญชี</p>
-                            <p class="text-lg font-semibold font-mono text-blue-700">020476296874</p>
-                        </div>
-                    </div>
-                </div>
+      <!-- Details -->
+      <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12 mb-16 fade-in">
+        <h3 class="text-2xl font-bold text-dark mb-4">รายละเอียดองค์พระเจดีย์</h3>
+        <p class="text-dark/80 leading-relaxed text-lg mb-6">เจดีย์ทรงองค์พระ หน้าตัก 5 เมตร สูง 6.85 เมตร มองจากด้านไหนก็เห็นเป็นองค์พระนั่งสมาธิ ภายในเป็นที่ประดิษฐานขององค์พระธรรมกายประจำตัว ดวงแก้ว และแผ่นทองจารึกรายนามเจ้าภาพ</p>
 
-                <!-- USA Payment Methods -->
-                <div class="donation-card">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-6">ประเทศสหรัฐอเมริกา</h3>
-                    <div class="space-y-6">
-                        <div>
-                            <p class="text-sm text-gray-600 mb-2">Check Payment</p>
-                            <p class="text-lg font-semibold text-gray-900">Make check payable to DMCTN</p>
-                        </div>
-                        <div>
-                            <p class="text-sm text-gray-600 mb-2">Zelle</p>
-                            <p class="text-lg font-semibold font-mono text-blue-700">dmctn2023@gmail.com</p>
-                        </div>
-                        <div class="pt-4 border-t border-gray-300">
-                            <p class="text-sm text-gray-600 font-semibold">ร่วมบุญแผ่นทองจารึกชื่อเจ้าภาพ</p>
-                            <p class="text-xl font-bold gold-accent mt-2">1 กอง = $150 (5,000 บาท)</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- QR Codes and Payment Images -->
-            <div class="mb-12">
-                <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">วิธีการร่วมบุญ</h3>
-                <div class="donation-images">
-                    <div class="qr-image">
-                        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/_2_159.jpg" 
-                             alt="Payment QR Code 1">
-                    </div>
-                    <div class="qr-image">
-                        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/1_2_161.jpg" 
-                             alt="Payment QR Code 2">
-                    </div>
-                    <div class="qr-image">
-                        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/2_2_162.jpg" 
-                             alt="Payment QR Code 3">
-                    </div>
-                    <div class="qr-image">
-                        <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/3_2_163.jpg" 
-                             alt="Payment QR Code 4">
-                    </div>
-                </div>
-            </div>
-
-            <!-- CTA Button -->
-            <div class="text-center">
-                <a href="tel:+16157521292" class="btn-accent px-10 py-4 rounded-lg font-bold text-lg inline-block">
-                    ติดต่อเพื่อร่วมบุญ
-                </a>
-            </div>
+        <h4 class="text-xl font-bold text-accent mb-4">✨ อานิสงส์แห่งการสร้างองค์พระเจดีย์</h4>
+        <p class="text-dark/80 mb-4">ผู้มีส่วนร่วมในการสถาปนาองค์พระเจดีย์ ย่อมได้รับอานิสงส์อันประมาณมิได้:</p>
+        <div class="space-y-3 mb-8">
+          <div class="flex items-start gap-3 bg-accent/5 rounded-xl p-4">
+            <span class="text-accent text-2xl">💪</span>
+            <p class="text-dark/80">ถึงพร้อมด้วยร่างกายที่แข็งแรง สมส่วน สวยงาม ผิวพรรณงาม</p>
+          </div>
+          <div class="flex items-start gap-3 bg-accent/5 rounded-xl p-4">
+            <span class="text-accent text-2xl">💎</span>
+            <p class="text-dark/80">ถึงพร้อมด้วยที่สุดแห่งสมบัติ คือ รูปสมบัติ ทรัพย์สมบัติ คุณสมบัติ</p>
+          </div>
+          <div class="flex items-start gap-3 bg-accent/5 rounded-xl p-4">
+            <span class="text-accent text-2xl">🧠</span>
+            <p class="text-dark/80">ถึงพร้อมด้วยปัญญาเฉลียวฉลาด ในศาสตร์ทั้งปวง</p>
+          </div>
+          <div class="flex items-start gap-3 bg-accent/5 rounded-xl p-4">
+            <span class="text-accent text-2xl">🌟</span>
+            <p class="text-dark/80">เมื่อละโลกไป ย่อมเข้าถึงสุคติโลกสวรรค์</p>
+          </div>
+          <div class="flex items-start gap-3 bg-accent/5 rounded-xl p-4">
+            <span class="text-accent text-2xl">☸️</span>
+            <p class="text-dark/80">เป็นเหตุปัจจัยในการบรรลุธรรม ทั้งในชาตินี้และชาติต่อๆ ไป</p>
+          </div>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="py-16 md:py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8 mb-12">
-                <!-- About -->
-                <div>
-                    <h4 class="text-lg font-bold mb-4">วัดพระธรรมกายเทนเนสซี</h4>
-                    <p class="text-gray-300 text-sm leading-relaxed">
-                        ศูนย์ปฏิบัติธรรมแห่งสันติภาพ ใจกลางรัฐเทนเนสซี สหรัฐอเมริกา
-                    </p>
-                </div>
+        <blockquote class="border-l-4 border-accent pl-6 py-4 bg-accent/5 rounded-r-xl italic text-lg text-dark/80 mb-8">
+          "องค์พระเจดีย์ เจดีย์ที่เป็นรูปองค์พระนั่งสมาธิ ที่มองด้านไหนก็เป็นองค์พระ เพิ่งเคยเกิดขึ้นครั้งแรกของโลก มองกลางวัน กลางคืน หรือมองด้านไหนก็เป็นองค์พระ" — ทบทวนโอวาทในอดีต
+        </blockquote>
 
-                <!-- Quick Links -->
-                <div>
-                    <h4 class="text-lg font-bold mb-4">เมนู</h4>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="footer-link">หน้าแรก</a></li>
-                        <li><a href="about.html" class="footer-link">เกี่ยวกับวัด</a></li>
-                        <li><a href="pagoda.html" class="footer-link">สถาปนาเจดีย์</a></li>
-                    </ul>
-                </div>
+        <p class="text-dark/80 leading-relaxed text-lg mb-4">ขอเรียนเชิญผู้มีบุญทั่วโลก มาร่วมกันสถาปนาองค์พระเจดีย์ องค์แรกในอเมริกา น้อมบูชาธรรมหลวงพ่อธัมมชโย</p>
 
-                <!-- Contact Info -->
-                <div>
-                    <h4 class="text-lg font-bold mb-4">ติดต่อเรา</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li>
-                            <p class="text-gray-300">📍 2033 Ghee Rd, Murfreesboro, TN 37127 USA</p>
-                        </li>
-                        <li>
-                            <a href="tel:+16157521292" class="footer-link">📞 +1 615-752-1292</a>
-                        </li>
-                        <li>
-                            <a href="mailto:tennessee@gmail.com" class="footer-link">✉️ tennessee@gmail.com</a>
-                        </li>
-                        <li>
-                            <p class="text-gray-300">📱 Line ID: phromthep</p>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Social Links -->
-                <div>
-                    <h4 class="text-lg font-bold mb-4">ติดตาม</h4>
-                    <ul class="space-y-3">
-                        <li>
-                            <a href="https://www.facebook.com/072dmctn" target="_blank" class="footer-link inline-flex items-center">
-                                f Facebook
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.youtube.com/@DMCTN072" target="_blank" class="footer-link inline-flex items-center">
-                                ▶ YouTube
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Divider -->
-            <div class="border-t border-gray-700 pt-8 text-center">
-                <p class="text-gray-300 text-sm">
-                    &copy; 2025 วัดพระธรรมกายเทนเนสซี (Dhammakaya Meditation Center Tennessee)
-                </p>
-                <p class="text-gray-400 text-xs mt-2">
-                    All rights reserved | ศูนย์ปฏิบัติธรรมแห่งสันติภาพ ใจกลางรัฐเทนเนสซี สหรัฐอเมริกา
-                </p>
-            </div>
+        <div class="text-center mt-8">
+          <a href="#donation" class="inline-block bg-gradient-to-r from-accent to-yellow-500 text-dark font-bold px-10 py-4 rounded-full text-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all">
+            🙏 ร่วมบุญสร้างเจดีย์
+          </a>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
 
-    <!-- Smooth scroll behavior -->
-    <script>
-        document.documentElement.scrollBehavior = 'smooth';
-        
-        // Add smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
+  <!-- ร่วมบุญสร้างเจดีย์ -->
+  <section data-section-id="22" id="donation" class="py-16 md:py-24 bg-gradient-to-br from-dark to-primary">
+    <div class="max-w-6xl mx-auto px-4 fade-in">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-white">ร่วมบุญสร้างเจดีย์</h2>
+        <div class="w-20 h-1 bg-accent mx-auto mt-4 rounded-full"></div>
+        <div class="mt-6 inline-block bg-accent/20 border-2 border-accent rounded-2xl px-8 py-4">
+          <p class="text-2xl md:text-3xl font-bold text-white">ร่วมบุญแผ่นทองจารึกชื่อเจ้าภาพ</p>
+          <p class="text-4xl md:text-5xl font-bold text-accent mt-2">1 กอง = $150</p>
+          <p class="text-white/70 text-lg">(5,000 บาท)</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <!-- Thailand -->
+        <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20">
+          <h3 class="text-xl font-bold text-accent mb-4">🇹🇭 บัญชีประเทศไทย</h3>
+          <div class="space-y-3 text-white">
+            <p><span class="text-white/60">ธนาคาร:</span> ธนาคารออมสิน</p>
+            <p><span class="text-white/60">ชื่อบัญชี:</span> วัดพระธรรมกายเทนเนสซี</p>
+            <p><span class="text-white/60">เลขบัญชี:</span> <span class="font-mono text-lg text-accent">020476296874</span></p>
+          </div>
+          <div class="mt-6">
+            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/_2_159.jpg" alt="QR Code" class="w-full max-w-sm mx-auto rounded-xl shadow-lg" />
+          </div>
+        </div>
+
+        <!-- USA -->
+        <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20">
+          <h3 class="text-xl font-bold text-accent mb-4">🇺🇸 USA Donation</h3>
+          <div class="space-y-3 text-white">
+            <p><span class="text-white/60">Make check payable to:</span> <span class="font-bold">DMCTN</span></p>
+            <p><span class="text-white/60">Zelle:</span> <span class="font-mono text-accent">dmctn2023@gmail.com</span></p>
+          </div>
+          <div class="mt-8 grid grid-cols-1 gap-4">
+            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/1_2_161.jpg" alt="" class="w-full rounded-xl shadow-lg" />
+            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/2_2_162.jpg" alt="" class="w-full rounded-xl shadow-lg" />
+            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/3_2_163.jpg" alt="" class="w-full rounded-xl shadow-lg" />
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a href="mailto:tennessee@gmail.com" class="inline-block bg-accent text-dark font-bold px-8 py-3 rounded-full text-lg hover:bg-yellow-400 transition">
+          📧 ติดต่อร่วมบุญ: tennessee@gmail.com
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-12">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <img src="https://pub-a71ab4f1880d46c9ba975e0786421c77.r2.dev/projects/2/images/logo-tennesse_2_186.png" alt="Logo" class="h-12 w-12 object-contain" />
+            <div>
+              <p class="font-bold text-lg">วัดพระธรรมกายเทนเนสซี</p>
+              <p class="text-white/60 text-sm">Dhammakaya Meditation Center Tennessee</p>
+            </div>
+          </div>
+          <p class="text-white/70 text-sm">ศูนย์ปฏิบัติธรรมแห่งสันติภาพ ใจกลางรัฐเทนเนสซี สหรัฐอเมริกา</p>
+        </div>
+        <div>
+          <h4 class="font-bold text-accent mb-4">ติดต่อเรา</h4>
+          <div class="space-y-2 text-sm text-white/70">
+            <p>📍 2033 Ghee Rd, Murfreesboro, TN 37127 USA</p>
+            <p>📞 <a href="tel:+16157521292" class="hover:text-accent transition">+1 (615) 752-1292</a></p>
+            <p>📧 <a href="mailto:tennessee@gmail.com" class="hover:text-accent transition">tennessee@gmail.com</a></p>
+            <p>💬 Line ID: phromthep</p>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-bold text-accent mb-4">ติดตามเรา</h4>
+          <div class="flex gap-4">
+            <a href="https://www.facebook.com/072dmctn" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-accent transition">📘</a>
+            <a href="https://www.youtube.com/@DMCTN072" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-accent transition">▶️</a>
+            <a href="https://maps.app.goo.gl/ZqoQaPaNNenPTq9AA" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-accent transition">📍</a>
+          </div>
+          <div class="mt-6">
+            <h4 class="font-bold text-accent mb-2">หน้าเว็บไซต์</h4>
+            <div class="space-y-1 text-sm text-white/70">
+              <p><a href="index.html" class="hover:text-accent transition">หน้าแรก</a></p>
+              <p><a href="about.html" class="hover:text-accent transition">เกี่ยวกับวัด</a></p>
+              <p><a href="pagoda.html" class="hover:text-accent transition">สถาปนาเจดีย์</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-white/10 mt-8 pt-6 text-center text-sm text-white/50">
+        <p>&copy; 2568 วัดพระธรรมกายเทนเนสซี — Dhammakaya Meditation Center Tennessee. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
